@@ -1,0 +1,25 @@
+@import "./variables";
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    body {
+        overflow-x: hidden;
+        .loader {
+            width: 100%;
+            height: 100vh;
+            background-color: #fff;
+            @include flexProperty(row, center,center);
+            position: fixed;
+            z-index: 100;
+            top: 0;
+            left: 0;
+            img {
+                width: 25%;
+            }
+        }
+    }
+}

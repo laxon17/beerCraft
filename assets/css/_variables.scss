@@ -1,0 +1,6 @@
+@mixin flexProperty($direction, $spacing, $aligning){
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $spacing;
+    align-items: $aligning;
+}
