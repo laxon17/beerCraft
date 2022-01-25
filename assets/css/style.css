@@ -1,6 +1,33 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,400;1,200&display=swap");
 * {
   padding: 0;
   margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+*:not(i) {
+  font-family: 'Poppins', sans-serif !important;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+html .mb {
+  margin-bottom: 60px;
+}
+
+html .mt {
+  margin-top: 30px;
+}
+
+html .pt {
+  padding-top: 5rem !important;
+}
+
+html .orange.lighten-6 {
+  background-color: #fff6e6 !important;
 }
 
 html body {
@@ -25,12 +52,50 @@ html body .loader {
       -ms-flex-align: center;
           align-items: center;
   position: fixed;
-  z-index: 100;
+  z-index: 10000;
   top: 0;
   left: 0;
 }
 
 html body .loader img {
   width: 25%;
+}
+
+html body p {
+  font-size: 1.25em;
+}
+
+html body blockquote {
+  text-transform: uppercase;
+  border-left-color: orange;
+}
+
+html body blockquote.exceptionquote {
+  border-left-color: transparent !important;
+  border-right: 5px solid orange;
+  padding-right: 1rem;
+}
+
+html body nav #logo-container img {
+  width: 45%;
+}
+
+html body nav li a {
+  text-transform: uppercase;
+}
+
+html body nav li i {
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+html body main .parallax-container {
+  height: 100vh;
+  padding-top: 300px;
+}
+
+html body main .carousel2 {
+  width: 80%;
+  margin: 50px auto;
 }
 /*# sourceMappingURL=style.css.map */

@@ -1,11 +1,29 @@
 @import "./variables";
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,400;1,200&display=swap');
 
 * {
     padding: 0;
     margin: 0;
+    box-sizing: border-box;
+    &:not(i) {
+        font-family: 'Poppins', sans-serif !important;
+    }
 }
 
 html {
+    scroll-behavior: smooth;
+    .mb {
+        margin-bottom: 60px;
+    }
+    .mt {
+        margin-top: 30px;
+    }
+    .pt {
+        padding-top: 5rem !important; 
+    }
+    .orange.lighten-6 {
+        background-color: rgb(255, 246, 230) !important;
+    }
     body {
         overflow-x: hidden;
         .loader {
@@ -14,12 +32,53 @@ html {
             background-color: #fff;
             @include flexProperty(row, center,center);
             position: fixed;
-            z-index: 100;
+            z-index: 10000;
             top: 0;
             left: 0;
             img {
                 width: 25%;
             }
+        }
+        p {
+            font-size: 1.25em;
+        }
+        blockquote {
+            text-transform: uppercase;
+            border-left-color: orange;
+            &.exceptionquote {
+                border-left-color: transparent !important;
+                border-right: 5px solid orange;
+                padding-right: 1rem;
+            }
+        }
+        nav {
+            #logo-container {
+                img {
+                    width: 45%;
+                }
+            }
+            li {
+                a {
+                    text-transform: uppercase;
+                }
+                i {
+                    margin-right: 10px;
+                    cursor: pointer;
+                }
+            }
+        }
+        main {
+            .parallax-container {
+                height: 100vh;
+                padding-top: 300px;
+            }
+            .carousel2 {
+                width: 80%;
+                margin: 50px auto;
+            }
+        }
+        footer {
+
         }
     }
 }

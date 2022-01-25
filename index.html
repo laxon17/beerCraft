@@ -1,38 +1,204 @@
 <!DOCTYPE html>
 <html lang="en">
+
     <head>
         <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
         <link rel="stylesheet" type="text/css" href="assets/css/responsive.css" />
         <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
-        <link rel="icon" href="./assets/img/logo.png" />
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
-        
+        <link rel="icon" href="./assets/img/hops.png" />
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
         <meta name="author" content="Lazar Lalović, 62/20" />
-        <meta name="description" content="Welcome to Crossfader! We are a leading DJ store and the best DJ course!" />
-        <meta name="keywords" content="DJ, Crossfader, Volume, Courses, Equipment, Software, Native Instruments, Pioneer, Denon, Numark, AKG, Music" />
-
+        <meta name="description" content="Welcome to worldCraft, the biggest Craft Beer community!" />
+        <meta name="keywords" content="craft beer, ipa craft, apa craft, best beer, sol beer, stout beer, brew, brewery, cream ale, blonde ale" />
         <script src="assets/js/main.js" defer></script>
         <script src="https://kit.fontawesome.com/51a8d0c9c6.js" crossorigin="anonymous"></script>
-        <title>beerCraft - Welcome</title>
+        <title>worldCraft - Welcome</title>
     </head>
+
     <body>
-        <div class="nav">
-            <ul>
-                <li>Oppp</li>
-                <li>Oppp</li>
-                <li>Oppp</li>
+        <!-- DOM Loading animation -->
+            <div class="loader">
+                <img src="./assets/img/beer-load.gif" alt="Beer Loading" />
+            </div>
+        <!-- End of DOM Loading animation -->
+
+        <!-- Responsive navigation menu with custom logo -->
+
+        <header class="navbar-fixed">
+            <nav class="orange lighten-1">
+                <div class="container">
+                    <div class="nav-wrapper">
+                        <a id="logo-container" class="brand-logo center" href="index.html">
+                            <img src="./assets/img/hops.png" alt="Hops with beer" />
+                        </a>
+                        <a href="#" data-target="mobile-nav" class="sidenav-trigger">
+                            <i class="material-icons white-text">menu</i>
+                        </a>
+                        <ul id="visible-links" class="left hide-on-med-and-down navLinks">  
+                            <li><a href="shop.html">Shop</a></li>
+                            <li><a href="about.html">About</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                            <li><a href="author.html">Author</a></li>
+                        </ul>
+                        <ul class="right">  
+                            <li>
+                                <i class="material-icons white-text">shopping_cart</i>
+                            </li>
+                            <li>
+                                <i class="material-icons white-text">favorite</i>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <!-- Hidden navigation menu -->
+            <ul class="sidenav sideNavCollapsed" id="mobile-nav">
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="author.html">Author</a></li>
             </ul>
+        <!-- End of hidden navigation menu -->
+
+    <!-- End of responsive navigation menu -->
+
+    <main>
+        <div class="parallax-container">
+            <div class="parallax">
+                <img src="./assets/img/brewery.jpg">
+            </div>
+            <div class="container" id="intro">
+                <h1 class="white-text">Welcome to worldCraft</h1>
+                <h2 class="white-text">Learn more about us</h2>
+                <button class="btn btn-large orange waves-effect waves-light">Show</button>
+            </div>
         </div>
-        <div class="loader">
-            <img src="./assets/img/beer-load.gif" alt="Beer Loading" />
+        <div class="section orange lighten-6">
+            <section class="mb mt">
+                <div class="row">
+                    <div class="col s10 m8 l8 offset-s1 offset-m2 offset-l2 center-align">
+                        <h3>world<span class="orange-text text-darken-2">Craft</span></h3>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col s10 m8 l8 offset-s1 offset-m2 offset-l2 center-align">
+                        <p class=" community-text">
+                            It's all about <span class="orange-text text-darken-2">BEER</span> ! HOP in and choose your favorite!
+                        </p>
+                    </div>
+                </div>
+            </section>
+            <div class="row">
+                <div class="col l5 offset-l1">
+                    <img class="responsive-img" src="assets/img/macleod-beer.jpg" alt="Glass of Beer" />
+                </div>
+                <div class="col l5 pt">
+                    <blockquote class="flow-text">World's most famous crafts</blockquote>
+                    <p>
+                        The sheer number of beer styles that make up the craft beer scene is exciting, 
+                        but it can also be intimidating - and that’s okay. With all of the different beer styles and beer names, 
+                        it is tough to remember what differentiates them from one another. 
+                        That is why we stash all of the types of beer that make up the craft beer world, 
+                        complete with a few beer names and beer styles to help you find your favorite types of beer.
+                    </p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col l5 pt offset-l1 right-align">
+                    <blockquote class="flow-text exceptionquote">Lovely place</blockquote>
+                    <p>
+                        Tap room is located within the Dogma Brewery, 5 minutes drive from the center of Belgrade, across from Ada Ciganlija. 
+                        The industrially inspired interior of 170m2, with a 7 meter long bar and an offer of Dogma and guest beers, 
+                        also offers an unusual experience – a view of the production plant. 
+                        Dogma tap room is a unique place in the city where you can enjoy socializing with beer, 
+                        while watching how the same beer delicacies are brewed in the production part.
+                    </p>
+                </div>
+                <div class="col l5">
+                    <img class="responsive-img" src="assets/img/pub.jpg" alt="Glass of Beer" />
+                </div>  
+            </div>
+            <div class="row">
+                <div class="col l5 offset-l1">
+                    <img class="responsive-img" src="assets/img/employee.jpg" alt="Glass of Beer" />
+                </div>
+                <div class="col l5 pt">
+                    <blockquote class="flow-text">Cheerful personnel</blockquote>
+                    <p>
+                        A craft brewer is a very knowledgeable beer maker who is deeply involved in the creation of new beers. 
+                        Craft brewers have a deep understanding of the entire brewing process, are passionate about beer-making and are very creative. 
+                        They enjoy experimenting with different flavours and are interested in making unique beers that customers will enjoy.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="parallax-container">
+            <div class="parallax"><img src="./assets/img/glass-of-beer.jpg"></div>
+        </div>
+    </main>
+
+    <footer class="page-footer grey darken-3">
+        <div class="container">
+            <div class="row">
+                <div class="col l6 s12 center-on-small-only">
+                    <h5 class="white-text">Footer Content</h5>
+                    <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
+                </div>
+                <div class="col l4 offset-l2 s12 center-on-small-only">
+                    <h5 class="white-text">Links</h5>
+                    <ul>
+                        <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
+                        <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
+                        <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
+                        <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright grey darken-4">
+            <div class="container">
+            Copyright &copy; Lazar Lalovic 2022. All Rights Reserved.
+            <a class="grey-text text-lighten-4 right" href="#!">
+                <i class="small far fa-file-pdf"></i>
+            </a>
+            </div>
+        </div>
+    </footer>
+
+        <div class="fixed-action-btn">
+            <button id="toTopBtn"  class="btn-large orange btn-floating waves-effect waves-light scale-transition scale-out">
+                <i class="large material-icons">keyboard_arrow_up</i>
+            </button>
         </div>
 
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
         <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+        <script>
+            AOS.init()
+            // materialize initializations 
+            $(document).ready(function(){
+                $('.sidenav').sidenav()
+                $('.parallax').parallax()
+                $('.carousel').carousel({
+                    fullWidth: true,
+                    duration: 700
+                })
+                $('.carousel2.carousel-slider').carousel({
+                    fullWidth: true,
+                    duration: 700,
+                    indicators: true
+                })
+                setInterval(() => {
+                    $('.carousel').carousel('next');
+                }, 9000);
+            });
+        </script>
     </body>
 </html>
