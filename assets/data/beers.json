@@ -1,0 +1,512 @@
+[
+    {
+        "id": 1,
+        "beerName": "Svetionik",
+        "brewery": 3,
+        "price": 1.25,
+        "alcoholPercentage": {
+            "percentage": 5.5,
+            "percentageRange": 1
+        },
+        "types": [
+            1, 5
+        ],
+        "beerCover": {
+            "location": "svetionik-apa.jpg",
+            "alternative": "Svetionik"
+        }
+    },
+    {
+        "id": 2,
+        "beerName": "Crna Krava",
+        "brewery": 3,
+        "price": 1.75,
+        "alcoholPercentage": {
+            "percentage": 5.35,
+            "percentageRange": 1
+        },
+        "types": [
+            8
+        ],
+        "beerCover": {
+            "location": "crna-krava-milk.png",
+            "alternative": "Crna Krava"
+        }
+    },
+    {
+        "id": 3,
+        "beerName": "Albino",
+        "brewery": 3,
+        "price": 1.19,
+        "alcoholPercentage": {
+            "percentage": 6.7,
+            "percentageRange": 1
+        },
+        "types": [
+            7
+        ],
+        "beerCover": {
+            "location": "albino-ipa.png",
+            "alternative": "Albino"
+        }
+    },
+    {
+        "id": 4,
+        "beerName": "Ayinger Dunkel",
+        "brewery": 1,
+        "price": 1.89,
+        "alcoholPercentage": {
+            "percentage": 5.3,
+            "percentageRange": 1
+        },
+        "types": [
+            3, 5
+        ],
+        "beerCover": {
+            "location": "ayinger-dunkel-weiss.png",
+            "alternative": "Ayinger Dunkel"
+        }
+    },
+    {
+        "id": 5,
+        "beerName": "Ayinger Helles",
+        "brewery": 1,
+        "price": 1.39,
+        "alcoholPercentage": {
+            "percentage": 5.7,
+            "percentageRange": 1
+        },
+        "types": [
+            5, 6
+        ],
+        "beerCover": {
+            "location": "ayinger-hell-weiss.png",
+            "alternative": "Ayinger Hell"
+        }
+    },
+    {
+        "id": 6,
+        "beerName": "Calculator",
+        "brewery": 3,
+        "price": 1.19,
+        "alcoholPercentage": {
+            "percentage": 6.1,
+            "percentageRange": 1
+        },
+        "types": [
+            7
+        ],
+        "beerCover": {
+            "location": "calculator-ipa.png",
+            "alternative": "Calculator"
+        }
+    },
+    {
+        "id": 7,
+        "beerName": "DogFish 120",
+        "brewery": 2,
+        "price": 4.99,
+        "alcoholPercentage": {
+            "percentage": 18.7,
+            "percentageRange": 3
+        },
+        "types": [
+            7
+        ],
+        "beerCover": {
+            "location": "dogfish-head-120min-ipa.png",
+            "alternative": "Svetionik"
+        }
+    },
+    {
+        "id": 8,
+        "beerName": "Hoptopod",
+        "brewery": 3,
+        "price": 1.29,
+        "alcoholPercentage": {
+            "percentage": 5.7,
+            "percentageRange": 1
+        },
+        "types": [
+            7
+        ],
+        "beerCover": {
+            "location": "dogma-hoptopod-ipa.jpg",
+            "alternative": "Hoptopod"
+        }
+    },
+    {
+        "id": 9,
+        "beerName": "Erdinger Weißbier",
+        "brewery": 4,
+        "price": 1.49,
+        "alcoholPercentage": {
+            "percentage": 5.5,
+            "percentageRange": 1
+        },
+        "types": [
+            5,6
+        ],
+        "beerCover": {
+            "location": "erdinger.jpg",
+            "alternative": "Erdinger Weißbier"
+        }
+    },
+    {
+        "id": 10,
+        "beerName": "Erdinger Dunkel",
+        "brewery": 4,
+        "price": 1.99,
+        "alcoholPercentage": {
+            "percentage": 5.7,
+            "percentageRange": 1
+        },
+        "types": [
+            3
+        ],
+        "beerCover": {
+            "location": "erdinger-dunkel.jpg",
+            "alternative": "Erdinger Dunkel"
+        }
+    },
+    {
+        "id": 11,
+        "beerName": "Firestone Wookey Jack",
+        "brewery": 9,
+        "price": 3.00,
+        "alcoholPercentage": {
+            "percentage": 8.1,
+            "percentageRange": 2
+        },
+        "types": [
+            3, 7
+        ],
+        "beerCover": {
+            "location": "firestone-wookey-jack.png",
+            "alternative": "Firestone Wookey Jack"
+        }
+    },
+    {
+        "id": 12,
+        "beerName": "FD Bloodline",
+        "brewery": 5,
+        "price": 1.79,
+        "alcoholPercentage": {
+            "percentage": 5.5,
+            "percentageRange": 1
+        },
+        "types": [
+            1
+        ],
+        "beerCover": {
+            "location": "flying-dog-bloodline.jpeg",
+            "alternative": "FD Bloodline"
+        }
+    },
+    {
+        "id": 13,
+        "beerName": "FD Doggie Style",
+        "brewery": 5,
+        "price": 2.99,
+        "alcoholPercentage": {
+            "percentage": 5.7,
+            "percentageRange": 1
+        },
+        "types": [
+            1
+        ],
+        "beerCover": {
+            "location": "flying-dog-doggie-style.jpg",
+            "alternative": "FD Doggie Style"
+        }
+    },
+    {
+        "id": 14,
+        "beerName": "Hofbräu Dunkel",
+        "brewery": 6,
+        "price": 1.19,
+        "alcoholPercentage": {
+            "percentage": 5.5,
+            "percentageRange": 1
+        },
+        "types": [
+            3
+        ],
+        "beerCover": {
+            "location": "hofbrau-dunkel.jpg",
+            "alternative": "Hofbrau Dunkel"
+        }
+    },
+    {
+        "id": 15,
+        "beerName": "Hofbräu Helles",
+        "brewery": 6,
+        "price": 0.89,
+        "alcoholPercentage": {
+            "percentage": 5.5,
+            "percentageRange": 1
+        },
+        "types": [
+            5, 6
+        ],
+        "beerCover": {
+            "location": "hofbrau-original-hell.png",
+            "alternative": "Hofbrau Helles"
+        }
+    },
+    {
+        "id": 16,
+        "beerName": "OB Devian Dale",
+        "brewery": 10,
+        "price": 0.69,
+        "alcoholPercentage": {
+            "percentage": 5.7,
+            "percentageRange": 1
+        },
+        "types": [
+            1
+        ],
+        "beerCover": {
+            "location": "oskar-blues-devian-dale.png",
+            "alternative": "Oskar Blues Devian Dale"
+        }
+    },
+    {
+        "id": 17,
+        "beerName": "Paulaner Dunkel",
+        "brewery": 7,
+        "price": 1.39,
+        "alcoholPercentage": {
+            "percentage": 6.5,
+            "percentageRange": 1
+        },
+        "types": [
+            3
+        ],
+        "beerCover": {
+            "location": "paulaner-dunkel.jpg",
+            "alternative": "Paulaner Dunkel"
+        }
+    },
+    {
+        "id": 18,
+        "beerName": "Paulaner Helles",
+        "brewery": 7,
+        "price": 1.19,
+        "alcoholPercentage": {
+            "percentage": 5.7,
+            "percentageRange": 1
+        },
+        "types": [
+            6
+        ],
+        "beerCover": {
+            "location": "paulaner-hell.jpg",
+            "alternative": "Paulaner Helles"
+        }
+    },
+    {
+        "id": 19,
+        "beerName": "Paulaner Weißbier",
+        "brewery": 6,
+        "price": 1.29,
+        "alcoholPercentage": {
+            "percentage": 5.0,
+            "percentageRange": 1
+        },
+        "types": [
+            5, 6
+        ],
+        "beerCover": {
+            "location": "paulaner-weis.jpg",
+            "alternative": "Paulaner Weisbier"
+        }
+    },
+    {
+        "id": 20,
+        "beerName": "Pinkus Pils",
+        "brewery": 12,
+        "price": 1.09,
+        "alcoholPercentage": {
+            "percentage": 5.0,
+            "percentageRange": 1
+        },
+        "types": [
+            4
+        ],
+        "beerCover": {
+            "location": "pinkus-pils.jfif",
+            "alternative": "Pinkus Pilsner"
+        }
+    },
+    {
+        "id": 21,
+        "beerName": "Pirate Life Black",
+        "brewery": 13,
+        "price": 1.49,
+        "alcoholPercentage": {
+            "percentage": 8.5,
+            "percentageRange": 2
+        },
+        "types": [
+            3, 7
+        ],
+        "beerCover": {
+            "location": "piratelife-black.png",
+            "alternative": "Pirate Life Black"
+        }
+    },
+    {
+        "id": 22,
+        "beerName": "Pulfer Hefe",
+        "brewery": 14,
+        "price": 1.59,
+        "alcoholPercentage": {
+            "percentage": 5.7,
+            "percentageRange": 1
+        },
+        "types": [
+            6
+        ],
+        "beerCover": {
+            "location": "pulfer-hefe.jpg",
+            "alternative": "Pulfer Hefe"
+        }
+    },
+    {
+        "id": 23,
+        "beerName": "Sierra Nevada APA",
+        "brewery": 15,
+        "price": 1.89,
+        "alcoholPercentage": {
+            "percentage": 5.9,
+            "percentageRange": 1
+        },
+        "types": [
+            1
+        ],
+        "beerCover": {
+            "location": "sierra-nevada-apa.png",
+            "alternative": "Sierra Nevada APA"
+        }
+    },
+    {
+        "id": 24,
+        "beerName": "Summer Solstice Ale",
+        "brewery": 16,
+        "price": 1.20,
+        "alcoholPercentage": {
+            "percentage": 5.0,
+            "percentageRange": 1
+        },
+        "types": [
+            2
+        ],
+        "beerCover": {
+            "location": "summer-solstice-cream.png",
+            "alternative": "Summer Solstice Cream Ale"
+        }
+    },
+    {
+        "id": 25,
+        "beerName": "SW APA",
+        "brewery": 8,
+        "price": 1.39,
+        "alcoholPercentage": {
+            "percentage": 5.0,
+            "percentageRange": 1
+        },
+        "types": [
+            1
+        ],
+        "beerCover": {
+            "location": "sweet-water-apa.jpg",
+            "alternative": "Sweet Water APA"
+        }
+    },
+    {
+        "id": 26,
+        "beerName": "SW IPA",
+        "brewery": 8,
+        "price": 1.69,
+        "alcoholPercentage": {
+            "percentage": 9.1,
+            "percentageRange": 2
+        },
+        "types": [
+            7
+        ],
+        "beerCover": {
+            "location": "sweet-water-ipa.jpg",
+            "alternative": "Sweet Water IPA"
+        }
+    },
+    {
+        "id": 27,
+        "beerName": "Victory Prima Pils",
+        "brewery": 18,
+        "price": 0.99,
+        "alcoholPercentage": {
+            "percentage": 5.3,
+            "percentageRange": 1
+        },
+        "types": [
+            4
+        ],
+        "beerCover": {
+            "location": "victory-prima-pils.png",
+            "alternative": "Victory Prima Pils"
+        }
+    },
+    {
+        "id": 28,
+        "beerName": "Weihenstephaner Weiss",
+        "brewery": 17,
+        "price": 1.19,
+        "alcoholPercentage": {
+            "percentage": 5.5,
+            "percentageRange": 1
+        },
+        "types": [
+            5, 6
+        ],
+        "beerCover": {
+            "location": "weihenstephaner-weiss.jpg",
+            "alternative": "Weihenstephaner Weissbier"
+        }
+    },
+    {
+        "id": 29,
+        "beerName": "Genesee CA",
+        "brewery": 19,
+        "price": 1.49,
+        "alcoholPercentage": {
+            "percentage": 5.1,
+            "percentageRange": 1
+        },
+        "types": [
+            2
+        ],
+        "beerCover": {
+            "location": "genesee-cream.jpg",
+            "alternative": "Genesee Cream Ale"
+        }
+    },
+    {
+        "id": 30,
+        "beerName": "NB Dayblazer",
+        "brewery": 11,
+        "price": 1.09,
+        "alcoholPercentage": {
+            "percentage": 5.2,
+            "percentageRange": 1
+        },
+        "types": [
+            2
+        ],
+        "beerCover": {
+            "location": "newbelgium-dayblazer-cream.png",
+            "alternative": "New Belgium Dayblazer"
+        }
+    }
+]

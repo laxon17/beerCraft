@@ -1,9 +1,5 @@
 [
     {
-        "value": "Home",
-        "location": "index.html"
-    },
-    {
         "value": "Shop",
         "location": "shop.html"
     },

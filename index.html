@@ -20,14 +20,13 @@
     </head>
 
     <body>
-        <!-- DOM Loading animation -->
-            <div class="loader">
-                <img src="./assets/img/beer-load.gif" alt="Beer Loading" />
-            </div>
-        <!-- End of DOM Loading animation -->
+    <!-- DOM Loading animation -->
+        <!-- <div class="loader">
+            <img src="./assets/img/beer-load.gif" alt="Beer Loading" />
+        </div> -->
+    <!-- End of DOM Loading animation -->
 
-        <!-- Responsive navigation menu with custom logo -->
-
+    <!-- Responsive navigation menu with custom logo -->
         <header class="navbar-fixed">
             <nav class="orange lighten-1">
                 <div class="container">
@@ -39,17 +38,15 @@
                             <i class="material-icons white-text">menu</i>
                         </a>
                         <ul id="visible-links" class="left hide-on-med-and-down navLinks">  
-                            <li><a href="shop.html">Shop</a></li>
-                            <li><a href="about.html">About</a></li>
-                            <li><a href="contact.html">Contact</a></li>
-                            <li><a href="author.html">Author</a></li>
+                            <!-- Content inserted from navigation.json -->
                         </ul>
                         <ul class="right">  
                             <li>
-                                <i class="material-icons white-text">shopping_cart</i>
+                                <i data-target="cart-tab" class="sidenav-trigger material-icons white-text">shopping_cart</i>
                             </li>
                             <li>
-                                <i class="material-icons white-text">favorite</i>
+                                
+                                <i data-target="fav-tab" class="sidenav-trigger material-icons white-text">favorite</i>
                             </li>
                         </ul>
                     </div>
@@ -58,135 +55,179 @@
         </header>
 
         <!-- Hidden navigation menu -->
-            <ul class="sidenav sideNavCollapsed" id="mobile-nav">
-                <li><a href="shop.html">Shop</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <li><a href="author.html">Author</a></li>
+            <ul class="sidenav sideNavCollapsed orange lighten-7" id="mobile-nav">
+                <!-- Content inserted from navigation.json -->
             </ul>
         <!-- End of hidden navigation menu -->
 
+        <!-- Cart & Fav tabs -->
+            <!-- Favorites  -->
+                <ul id="fav-tab" class="sidenav sidenav orange lighten-7">
+                    <h4 class="center">Favorites</h4>
+                    <li><div class="divider"></div></li>
+                    
+                </ul>    
+             <!-- End of favorites -->
+
+            <!-- Shopping cart -->
+                <ul id="cart-tab" class="sidenav sidenav orange lighten-7">
+                    <h4 class="center">Shopping cart</h4>
+                    <li><div class="divider"></div></li>
+                    
+                </ul>
+            <!-- End of shopping cart -->
+        <!-- End of Cart & Fav tabs -->
+
     <!-- End of responsive navigation menu -->
 
-    <main>
-        <div class="parallax-container">
-            <div class="parallax">
-                <img src="./assets/img/brewery.jpg">
-            </div>
-            <div class="container" id="intro">
-                <h1 class="white-text">Welcome to worldCraft</h1>
-                <h2 class="white-text">Learn more about us</h2>
-                <button class="btn btn-large orange waves-effect waves-light">Show</button>
-            </div>
-        </div>
-        <div class="section orange lighten-6">
-            <section class="mb mt">
-                <div class="row">
-                    <div class="col s10 m8 l8 offset-s1 offset-m2 offset-l2 center-align">
-                        <h3>world<span class="orange-text text-darken-2">Craft</span></h3>
-                    </div>
+    <!-- Main content of page -->
+        <main>
+            <div class="parallax-container">
+                <div class="parallax">
+                    <img src="./assets/img/brewery.jpg">
                 </div>
+                <div class="container" id="intro">
+                    <h1 class="white-text intro-text">Welcome to worldCraft</h1>
+                    <h2 class="white-text intro-text2">Learn more about us</h2>
+                    <a href="./about.html" class="btn btn-large orange waves-effect waves-light">Show</a>
+                </div>
+            </div>
+            <div class="section orange lighten-6">
+                <section class="mb mt">
+                    <div class="row">
+                        <div class="col s10 m8 l8 offset-s1 offset-m2 offset-l2 center-align">
+                            <h3>world<span class="orange-text text-darken-2">Craft</span></h3>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col s10 m8 l8 offset-s1 offset-m2 offset-l2 center-align">
+                            <p class=" community-text">
+                                It's all about <span class="orange-text text-darken-2">BEER</span> ! HOP in and choose your favorite!
+                            </p>
+                        </div>
+                    </div>
+                </section>
                 <div class="row">
-                    <div class="col s10 m8 l8 offset-s1 offset-m2 offset-l2 center-align">
-                        <p class=" community-text">
-                            It's all about <span class="orange-text text-darken-2">BEER</span> ! HOP in and choose your favorite!
+                    <div class="col l5 offset-l1" data-aos="fade-up-right">
+                        <img class="responsive-img" src="assets/img/macleod-beer.jpg" alt="Glass of Beer" />
+                    </div>
+                    <div class="col l5 pt" data-aos="fade-up-left">
+                        <blockquote class="flow-text">World's most famous crafts</blockquote>
+                        <p>
+                            The sheer number of beer styles that make up the craft beer scene is exciting, 
+                            but it can also be intimidating - and that’s okay. With all of the different beer styles and beer names, 
+                            it is tough to remember what differentiates them from one another. 
+                            That is why we stash all of the types of beer that make up the craft beer world, 
+                            complete with a few beer names and beer styles to help you find your favorite types of beer.
                         </p>
                     </div>
                 </div>
-            </section>
-            <div class="row">
-                <div class="col l5 offset-l1">
-                    <img class="responsive-img" src="assets/img/macleod-beer.jpg" alt="Glass of Beer" />
+                <div id="second-banner" class="row">
+                    <div class="col l5 pt offset-l1 right-align" data-aos="fade-up-right">
+                        <blockquote class="flow-text exceptionquote">Lovely place</blockquote>
+                        <p>
+                            Our pub is located in st. Zdravka Celara, 5 minutes drive from the center of Belgrade, across from Pioneer Hall. 
+                            The industrially inspired interior of 200m2, with a 8 meter long bar and an offer of all types and brands of craft beers, 
+                            also offers an unusual experience – a view of the production plant. 
+                            Our pub is a unique place in the city where you can enjoy socializing with beer, 
+                            while watching how the same beer delicacies are brewed in the production part.
+                        </p>
+                    </div>
+                    <div class="col l5" data-aos="fade-up-left">
+                        <img class="responsive-img" src="assets/img/pub.jpg" alt="Glass of Beer" />
+                    </div>  
                 </div>
-                <div class="col l5 pt">
-                    <blockquote class="flow-text">World's most famous crafts</blockquote>
-                    <p>
-                        The sheer number of beer styles that make up the craft beer scene is exciting, 
-                        but it can also be intimidating - and that’s okay. With all of the different beer styles and beer names, 
-                        it is tough to remember what differentiates them from one another. 
-                        That is why we stash all of the types of beer that make up the craft beer world, 
-                        complete with a few beer names and beer styles to help you find your favorite types of beer.
-                    </p>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col l5 pt offset-l1 right-align">
-                    <blockquote class="flow-text exceptionquote">Lovely place</blockquote>
-                    <p>
-                        Tap room is located within the Dogma Brewery, 5 minutes drive from the center of Belgrade, across from Ada Ciganlija. 
-                        The industrially inspired interior of 170m2, with a 7 meter long bar and an offer of Dogma and guest beers, 
-                        also offers an unusual experience – a view of the production plant. 
-                        Dogma tap room is a unique place in the city where you can enjoy socializing with beer, 
-                        while watching how the same beer delicacies are brewed in the production part.
-                    </p>
-                </div>
-                <div class="col l5">
-                    <img class="responsive-img" src="assets/img/pub.jpg" alt="Glass of Beer" />
-                </div>  
-            </div>
-            <div class="row">
-                <div class="col l5 offset-l1">
-                    <img class="responsive-img" src="assets/img/employee.jpg" alt="Glass of Beer" />
-                </div>
-                <div class="col l5 pt">
-                    <blockquote class="flow-text">Cheerful personnel</blockquote>
-                    <p>
-                        A craft brewer is a very knowledgeable beer maker who is deeply involved in the creation of new beers. 
-                        Craft brewers have a deep understanding of the entire brewing process, are passionate about beer-making and are very creative. 
-                        They enjoy experimenting with different flavours and are interested in making unique beers that customers will enjoy.
-                    </p>
+                <div class="row">
+                    <div class="col l5 offset-l1" data-aos="fade-up-right">
+                        <img class="responsive-img" src="assets/img/employee.jpg" alt="Glass of Beer" />
+                    </div>
+                    <div class="col l5 pt" data-aos="fade-up-left">
+                        <blockquote class="flow-text">Cheerful personnel</blockquote>
+                        <p>
+                            A craft brewer is a very knowledgeable beer maker who is deeply involved in the creation of new beers. 
+                            Craft brewers have a deep understanding of the entire brewing process, are passionate about beer-making and are very creative. 
+                            They enjoy experimenting with different flavours and are interested in making unique beers that customers will enjoy.
+                        </p>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="parallax-container">
-            <div class="parallax"><img src="./assets/img/glass-of-beer.jpg"></div>
-        </div>
-    </main>
+            <div class="parallax-container">
+                <div class="parallax"><img src="./assets/img/glass-of-beer.jpg"></div>
+                <div class="row">
+                    <div class="col s8 m4 l4 offset-s2 offset-m4 push-l2 center"><img class="responsive-img" src="./assets/img/beers.png" alt="Beers" data-aos="fade-up-right"></div>
+                    <div class="col s12 m4 l4 offset-m4 push-l2 pt center" data-aos="fade-up-left">
+                        <p class="flow-text white-text">Can't visit us?</p>
+                        <br />
+                        <a href="./shop.html" class="btn btn-large orange waves-effect waves-light">Order Now</a>
+                    </div>
+                </div>
+            </div>
+        </main>
+    <!-- End of main content of page -->
 
-    <footer class="page-footer grey darken-3">
-        <div class="container">
-            <div class="row">
-                <div class="col l6 s12 center-on-small-only">
-                    <h5 class="white-text">Footer Content</h5>
-                    <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
-                </div>
-                <div class="col l4 offset-l2 s12 center-on-small-only">
-                    <h5 class="white-text">Links</h5>
-                    <ul>
-                        <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
-                        <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
-                        <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
-                        <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <div class="footer-copyright grey darken-4">
+    <!-- Footer of the page -->
+        <footer class="page-footer grey darken-3">
             <div class="container">
-            Copyright &copy; Lazar Lalovic 2022. All Rights Reserved.
-            <a class="grey-text text-lighten-4 right" href="#!">
-                <i class="small far fa-file-pdf"></i>
-            </a>
+                <div class="row">
+                    <div class="col m3 l3 s12 offset-m1 offset-l1 center-on-small-only">
+                        <h5 class="white-text">Useful links</h5>
+                        <ul>
+                            <li><a class="white-text" href="#">What is craft beer?</a></li>
+                            <li><a class="white-text" href="#">How is craft beer brewed?</a></li>
+                            <li><a class="white-text" href="#">Brewery near me</a></li>
+                            <li><a class="white-text" href="#">SARS-CoV-2 info.</a></li>
+                        </ul>
+                    </div>
+                    <div class="col m3 l3 s12 offset-m1 offset-l1 center-on-small-only">
+                        <h5 class="white-text">Contact us</h5>
+                        <ul id="contact-methods">
+                            <li><a class="white-text" href="./assets/settings/feed.rss">RSS News</a></li>
+                            <li>Mail: lazarlalovic@gmail.com</li>
+                            <li>Phone: 064 / 923 82 52</li>
+                            <li>Street: Zdravka Celara 16</li>
+                        </ul>
+                    </div>
+                    <div class="col m3 l3 s12 offset-m1 offset-l1 center-on-small-only">
+                        <h5 class="white-text">Site assets</h5>
+                        <ul>
+                            <li><a class="white-text" href="#">Documentation</a></li>
+                            <li><a class="white-text" href="#">Sitemap</a></li>
+                            <li><a class="white-text" href="#">RSS</a></li>
+                            <li><a class="white-text" href="#">main.js</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>  
+            <div class="footer-copyright grey darken-4">
+                <div class="container center-align">
+                    Copyright &copy; Lazar Lalovic 2022. All Rights Reserved.
+                </div>
             </div>
-        </div>
-    </footer>
+        </footer>
+    <!-- End of page footer -->
 
+    <!-- Back to top btn -->
         <div class="fixed-action-btn">
             <button id="toTopBtn"  class="btn-large orange btn-floating waves-effect waves-light scale-transition scale-out">
                 <i class="large material-icons">keyboard_arrow_up</i>
             </button>
         </div>
+    <!-- End of back to top btn -->
 
         <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
         <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
         <script>
-            AOS.init()
-            // materialize initializations 
-            $(document).ready(function(){
-                $('.sidenav').sidenav()
-                $('.parallax').parallax()
-            });
+            // AOS Library initialization
+                AOS.init()
+            // End of AOS Library initialization
+
+            // Materialize components initialization 
+                $(document).ready(function(){
+                    $('.sidenav').sidenav()
+                    $('.parallax').parallax()
+                })
+            // End of Materialize components initialization 
         </script>
     </body>
 </html>

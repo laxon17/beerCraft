@@ -10,8 +10,27 @@
   font-family: 'Poppins', sans-serif !important;
 }
 
+:root {
+  --cardHeight: 350px;
+}
+
+::-moz-selection {
+  color: #fff;
+  background-color: orange;
+}
+
+::selection {
+  color: #fff;
+  background-color: orange;
+}
+
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+html i {
+  cursor: pointer;
 }
 
 html .mb {
@@ -26,8 +45,28 @@ html .pt {
   padding-top: 5rem !important;
 }
 
+html .pt-1 {
+  padding-top: 1rem !important;
+}
+
+html .pt-2 {
+  padding-top: 2rem !important;
+}
+
+html .pt-3 {
+  padding-top: 3rem !important;
+}
+
+html .small-text {
+  font-size: .8rem !important;
+}
+
 html .orange.lighten-6 {
   background-color: #fff6e6 !important;
+}
+
+html .orange.lighten-7 {
+  background-color: #fffdf9 !important;
 }
 
 html body {
@@ -92,5 +131,28 @@ html body nav li i {
 html body main .parallax-container {
   height: 100vh;
   padding-top: 300px;
+}
+
+html body main .container2 {
+  height: 80vh !important;
+}
+
+html body main #beer-price {
+  font-size: 1.5rem !important;
+  color: #0abd90;
+}
+
+html body main input[type="checkbox"]:checked + span:not(.lever):before {
+  border-right: 2px solid #dd9000;
+  border-bottom: 2px solid orange;
+}
+
+html body main .product-image {
+  height: var(--cardHeight);
+}
+
+html body footer #footer-logo {
+  -webkit-filter: grayscale(100%);
+          filter: grayscale(100%);
 }
 /*# sourceMappingURL=style.css.map */

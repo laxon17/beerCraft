@@ -10,8 +10,21 @@
     }
 }
 
+:root {
+    --cardHeight: 350px;
+}
+
+::selection {
+    color: #fff;
+    background-color: orange;
+}
+
 html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
+    i {
+        cursor: pointer;
+    }
     .mb {
         margin-bottom: 60px;
     }
@@ -21,8 +34,25 @@ html {
     .pt {
         padding-top: 5rem !important; 
     }
-    .orange.lighten-6 {
-        background-color: rgb(255, 246, 230) !important;
+    .pt-1 {
+        padding-top: 1rem !important;
+    }
+    .pt-2 {
+        padding-top: 2rem !important;
+    }
+    .pt-3 {
+        padding-top: 3rem !important;
+    } 
+    .small-text {
+        font-size: .8rem !important;
+    }
+    .orange {
+        &.lighten-6 {
+            background-color: rgb(255, 246, 230) !important;
+        }
+        &.lighten-7 {
+            background-color: rgb(255, 253, 249) !important;
+        }
     }
     body {
         overflow-x: hidden;
@@ -72,9 +102,25 @@ html {
                 height: 100vh;
                 padding-top: 300px;
             }
+            .container2 {
+                height: 80vh !important;
+            }
+            #beer-price {
+                font-size: 1.5rem !important;
+                color: rgb(10, 189, 144);
+            }
+            input[type="checkbox"]:checked + span:not(.lever):before {
+                border-right: 2px solid rgb(221, 144, 0);
+                border-bottom: 2px solid orange;
+            }
+            .product-image {
+                height: var(--cardHeight);
+            }
         }
         footer {
-
+            #footer-logo {
+                filter: grayscale(100%);
+            }
         }
     }
 }

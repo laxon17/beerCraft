@@ -1,1 +1,75 @@
-/* No CSS *//*# sourceMappingURL=responsive.css.map */
+@media screen and (max-width: 1440px) {
+  :root {
+    --cardHeight: 280px;
+  }
+}
+
+@media screen and (max-width: 1220px) {
+  :root {
+    --cardHeight: 230px;
+  }
+}
+
+@media screen and (max-width: 1060px) {
+  :root {
+    --cardHeight: 150px;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .parallax-container {
+    padding-top: 200px !important;
+  }
+  .parallax-container .intro-text {
+    font-size: 3rem !important;
+  }
+  .parallax-container .intro-text2 {
+    font-size: 2.5rem !important;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  :root {
+    --cardHeight: 300px;
+  }
+  #second-banner {
+    -webkit-box-orient: vertical !important;
+    -webkit-box-direction: reverse !important;
+        -ms-flex-direction: column-reverse !important;
+            flex-direction: column-reverse !important;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  :root {
+    --cardHeight: 200px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  :root {
+    --cardHeight: 350px;
+  }
+  .parallax-container {
+    padding-top: 150px !important;
+  }
+  .parallax-container .intro-text {
+    font-size: 2.5rem !important;
+  }
+  .parallax-container .intro-text2 {
+    font-size: 2rem !important;
+  }
+}
+
+@media screen and (max-width: 405px) {
+  .parallax-container {
+    padding-top: 100px !important;
+  }
+  .parallax-container .intro-text {
+    font-size: 2rem !important;
+  }
+  .parallax-container .intro-text2 {
+    font-size: 1.5rem !important;
+  }
+}
+/*# sourceMappingURL=responsive.css.map */

@@ -1,0 +1,34 @@
+[
+    {
+        "id": 1,
+        "name": "APA"
+    }, 
+    {
+        "id": 2,
+        "name": "Cream Ale"
+    }, 
+    {
+        "id": 3,
+        "name": "Dunkel"
+    }, 
+    {
+        "id": 4,
+        "name": "German Pilsner"
+    }, 
+    {
+        "id": 5,
+        "name": "Helles"
+    }, 
+    {
+        "id": 6,
+        "name": "Hefe Weisse"
+    }, 
+    {
+        "id": 7,
+        "name": "IPA"
+    },
+    {
+        "id": 8,
+        "name": "Milk Stout"
+    } 
+]
