@@ -41,6 +41,10 @@ html .mt {
   margin-top: 30px;
 }
 
+html .pl {
+  padding-left: 1.5rem !important;
+}
+
 html .pt {
   padding-top: 5rem !important;
 }
@@ -140,6 +144,25 @@ html body main .container2 {
 html body main #beer-price {
   font-size: 1.5rem !important;
   color: #0abd90;
+}
+
+html body main .input-field input[type="text"]:focus {
+  border-bottom-color: #ffb223 !important;
+  -webkit-box-shadow: 0 1px 0 0 #ffb223 !important;
+          box-shadow: 0 1px 0 0 #ffb223 !important;
+}
+
+html body main .input-field input[type="text"]:focus + label {
+  color: #ffb223 !important;
+}
+
+html body main .input-field label {
+  font-size: 1.25rem !important;
+}
+
+html body main .input-field .dropdown-content li > a,
+html body main .input-field .dropdown-content li > span {
+  color: #ffb223 !important;
 }
 
 html body main input[type="checkbox"]:checked + span:not(.lever):before {

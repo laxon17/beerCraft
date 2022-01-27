@@ -14,7 +14,8 @@
         "beerCover": {
             "location": "svetionik-apa.jpg",
             "alternative": "Svetionik"
-        }
+        },
+        "beerDescription": "Extreme drinkability, whose aroma is illuminated by mango, orange, mandarin and grapefruit, will show you a carefully intoxicated path to the bright ale with a symbolic name. The lighthouse is made of selected barley and wheat malts, created after the collision of two large brewing schools - traditional German and innovative American."
     },
     {
         "id": 2,
@@ -31,7 +32,8 @@
         "beerCover": {
             "location": "crna-krava-milk.png",
             "alternative": "Crna Krava"
-        }
+        },
+        "beerDescription": "The new Dogma darling has arrived! Notes of coffee and chocolate in the aroma, full and milky taste in the mouth. Six special malts and the addition of roasted barley and lactose. Meet Crna Krava, which is a classic island stout, enriched with milky taste!"
     },
     {
         "id": 3,
@@ -48,7 +50,8 @@
         "beerCover": {
             "location": "albino-ipa.png",
             "alternative": "Albino"
-        }
+        },
+        "beerDescription": "Albino 'White IPA' is a beer style created somewhere between the Belgian Wit and the well-known India Pale Ale. By combining barley and wheat malt with a carefully determined share of wheat flakes, we have created a beer with a balanced body, pleasant aromas and bitterness obtained by using American hops - Chinook, Simcoe and Cascade. We added a little orange peel to all that and got a refreshing, summer White IPA."
     },
     {
         "id": 4,
@@ -99,7 +102,8 @@
         "beerCover": {
             "location": "calculator-ipa.png",
             "alternative": "Calculator"
-        }
+        },
+        "beerDescription": "With its drinkability, softness and aromas of tropical fruits, white wine, passion fruit and papaya on the hop side (Idaho 7 & Nelson Sauvin), as well as light malt and rice on the malt side, CALCULATOR will bring you closer to the complex process of calculating and finding the perfect combination of ingredients every time you create new beer recipes!"
     },
     {
         "id": 7,
@@ -124,7 +128,7 @@
         "brewery": 3,
         "price": 1.29,
         "alcoholPercentage": {
-            "percentage": 5.7,
+            "percentage": 6.7,
             "percentageRange": 1
         },
         "types": [
@@ -133,7 +137,8 @@
         "beerCover": {
             "location": "dogma-hoptopod-ipa.jpg",
             "alternative": "Hoptopod"
-        }
+        },
+        "beerDescription": "A beer that will ignite all your senses! Using the dry hop technique, we have created a drinkable and strong combination of tropical and floral aromas, for all fans of authentic India Pale Ale style. The American School of Brewing and passion for beer made this hop monster leave a striking impression after each sip."
     },
     {
         "id": 9,

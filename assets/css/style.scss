@@ -31,6 +31,9 @@ html {
     .mt {
         margin-top: 30px;
     }
+    .pl {
+        padding-left: 1.5rem !important;
+    }
     .pt {
         padding-top: 5rem !important; 
     }
@@ -108,6 +111,26 @@ html {
             #beer-price {
                 font-size: 1.5rem !important;
                 color: rgb(10, 189, 144);
+            }
+            .input-field {
+                input[type="text"]:focus {
+                    border-bottom-color: rgb(255, 178, 35) !important;
+                    box-shadow: 0 1px 0 0 rgb(255, 178, 35) !important;
+                    &+label {
+                        color: rgb(255, 178, 35) !important;
+                    }
+                }
+                label {
+                    font-size: 1.25rem !important;
+                }
+                .dropdown-content {
+                    & li {
+                        &>a,
+                        &>span {
+                            color: rgb(255, 178, 35) !important;
+                        }
+                    }
+                }
             }
             input[type="checkbox"]:checked + span:not(.lever):before {
                 border-right: 2px solid rgb(221, 144, 0);

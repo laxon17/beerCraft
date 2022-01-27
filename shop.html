@@ -107,214 +107,64 @@
                     </div>
                 </section>
                 <div class="row"> 
-                    <div id="options-container" class="col s12 m3 l2">
+                    <div id="options-container" class="col s12 m3 l2 pl">
                         <div class="row">
-                            <div class="col s12 l12">
+                            <div class="col s12 l12 pt-3">
                                 <div class="row">
-                                    <h3>Filters</h3>
+                                    <div class="input-field">
+                                        <input type="text" id="searchBeer" placeholder="e.g. Erdinger Hell">
+                                        <label for="searchBeer">Search</label>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <button id="clearFilters" class="btn orange waves-effect" disabled>CLEAR FILTERS</button>
+                                </div>
+                                <div class="row">
+                                    <h4>Filters</h4>
                                 </div>
                                 <ul id="filters">
-                                    <li><h4>Type</h4>
+                                    <li>
+                                        <h5>Type</h5>
                                         <div class="divider"></div>
-                                        <ul class="pt-1">
-                                            <li>
-                                                <label>
-                                                    <input type="checkbox"/>
-                                                    <span>APA</span>
-                                                </label>
-                                            </li>
-                                            <li>
-                                                <label>
-                                                    <input type="checkbox"/>
-                                                    <span>Cream Ale</span>
-                                                </label>
-                                            </li>
-                                            <li>
-                                                <label>
-                                                    <input type="checkbox"/>
-                                                    <span>Dunkel</span>
-                                                </label>
-                                            </li>
-                                            <li>
-                                                <label>
-                                                    <input type="checkbox"/>
-                                                    <span>German Pilsner</span>
-                                                </label>
-                                            </li>
-                                            <li>
-                                                <label>
-                                                    <input type="checkbox"/>
-                                                    <span>Helles</span>
-                                                </label>
-                                            </li>
-                                            <li>
-                                                <label>
-                                                    <input type="checkbox"/>
-                                                    <span>Hefeweizen</span>
-                                                </label>
-                                            </li>
-                                            <li>
-                                                <label>
-                                                    <input type="checkbox"/>
-                                                    <span>IPA</span>
-                                                </label>
-                                            </li>
+
+                                        <ul class="pt-1" id="typeFilter">
+                                            
                                         </ul>
                                     </li>
-                                    <li><h4>Brand</h4>
+                                    <li>
+                                        <h5>Brand</h5>
                                         <div class="divider"></div>
-                                        <ul class="pt-1">
-                                            <li>
-                                                <label>
-                                                    <input type="checkbox"/>
-                                                    <span>Erdinger</span>
-                                                </label>
-                                            </li>
-                                            <li>
-                                                <label>
-                                                    <input type="checkbox"/>
-                                                    <span>Erdinger</span>
-                                                </label>
-                                            </li>
-                                            <li>
-                                                <label>
-                                                    <input type="checkbox"/>
-                                                    <span>Erdinger</span>
-                                                </label>
-                                            </li>
+                                        <ul class="pt-1" id="brandFilter">
+                                            
                                         </ul>
                                     </li>
                                     
-                                    <li><h4>Alc.%</h4>
+                                    <li>
+                                        <h5>Alc.%</h5>
                                         <div class="divider"></div>
-                                        <ul class="pt-1">
-                                            <li>
-                                                <label>
-                                                    <input type="checkbox"/>
-                                                    <span>5-7</span>
-                                                </label>
-                                            </li>
-                                            <li>
-                                                <label>
-                                                    <input type="checkbox"/>
-                                                    <span>8-10</span>
-                                                </label>
-                                            </li>
-                                            <li>
-                                                <label>
-                                                    <input type="checkbox"/>
-                                                    <span>&gt; 10</span>
-                                                </label>
-                                            </li>
+                                        <ul class="pt-1" id="alcFilter">
+                                           
                                         </ul>
                                     </li>
                                 </ul>
-                                <h3>Sort</h3>
+                                <div class="row">
+                                    <h3>Sorting</h3>
+                                </div>
+                                <div class="input-field">
+                                    <select id="sortSelect">
+                                        <option value="" disabled selected>Sort by</option>
+                                        <option value="1"> Name ASC</option>
+                                        <option value="2"> Name DESC</option>
+                                        <option value="3"> Price ASC</option>
+                                        <option value="4"> Price DESC</option>
+                                    </select>
+                                </div>
                             </div>
                         </div>
                     </div>
 
                     <div id="beerContainer" class="col s12 m9 l10">                   
-                        <div class="col s12 m6 l3">
-                            <div class="card">
-                                <div class="card-image">
-                                    <img class="product-image" src="./assets/img/firestone-wookey-jack.png" alt="">
-                                    <a href="#!" class="halfway-fab btn-floating orange pulse"><i class="material-icons">favorite</i></a>
-                                </div>
-                                <div class="card-content">
-                                    <div class="card-title">DF Head 120</div>
-                                    <p class="small-text pt-1">Category 1, Category 2</p>
-                                    <p class="small-text pt-1">Alc. % 6.7</p>
-                                    <p id="beer-price" class="pt-2 center">
-                                        $12.99
-                                    </p>
-                                    
-                                </div>
-                                <div class="center card-action">
-                                    <a href="#!">Add To Cart</a>
-                                </div>
-                            </div>
-                        </div>                                       
-                        <div class="col s12 m6 l3">
-                            <div class="card">
-                                <div class="card-image">
-                                    <img class="product-image" src="./assets/img/firestone-wookey-jack.png" alt="">
-                                    <a href="#!" class="halfway-fab btn-floating orange pulse"><i class="material-icons">favorite</i></a>
-                                </div>
-                                <div class="card-content">
-                                    <div class="card-title">DF Head 120</div>
-                                    <p class="small-text pt-1">Category 1, Category 2</p>
-                                    <p class="small-text pt-1">Alc. % 6.7</p>
-                                    <p id="beer-price" class="pt-2 center">
-                                        $12.99
-                                    </p>
-                                    
-                                </div>
-                                <div class="center card-action">
-                                    <a href="#!">Add To Cart</a>
-                                </div>
-                            </div>
-                        </div>                                       
-                        <div class="col s12 m6 l3">
-                            <div class="card">
-                                <div class="card-image">
-                                    <img class="product-image" src="./assets/img/firestone-wookey-jack.png" alt="">
-                                    <a href="#!" class="halfway-fab btn-floating orange pulse"><i class="material-icons">favorite</i></a>
-                                </div>
-                                <div class="card-content">
-                                    <div class="card-title">DF Head 120</div>
-                                    <p class="small-text pt-1">Category 1, Category 2</p>
-                                    <p class="small-text pt-1">Alc. % 6.7</p>
-                                    <p id="beer-price" class="pt-2 center">
-                                        $12.99
-                                    </p>
-                                    
-                                </div>
-                                <div class="center card-action">
-                                    <a href="#!">Add To Cart</a>
-                                </div>
-                            </div>
-                        </div>                                       
-                        <div class="col s12 m6 l3">
-                            <div class="card">
-                                <div class="card-image">
-                                    <img class="product-image" src="./assets/img/beers/firestone-wookey-jack.png" alt="">
-                                    <a href="#!" class="halfway-fab btn-floating orange pulse"><i class="material-icons">favorite</i></a>
-                                </div>
-                                <div class="card-content">
-                                    <div class="card-title">DF Head 120</div>
-                                    <p class="small-text pt-1">Category 1, Category 2</p>
-                                    <p class="small-text pt-1">Alc. % 6.7</p>
-                                    <p id="beer-price" class="pt-2 center">
-                                        $12.99
-                                    </p>
-                                    
-                                </div>
-                                <div class="center card-action">
-                                    <a href="#!">Add To Cart</a>
-                                </div>
-                            </div>
-                        </div>                                       
-                        <div class="col s12 m6 l3">
-                            <div class="card">
-                                <div class="card-image">
-                                    <img class="product-image" src="./assets/img/firestone-wookey-jack.png" alt="">
-                                    <a href="#!" class="halfway-fab btn-floating orange pulse"><i class="material-icons">favorite</i></a>
-                                </div>
-                                <div class="card-content">
-                                    <div class="card-title">DF Head 120</div>
-                                    <p class="small-text pt-1">Category 1, Category 2</p>
-                                    <p class="small-text pt-1">Alc. % 6.7</p>
-                                    <p id="beer-price" class="pt-2 center">
-                                        $12.99
-                                    </p>
-                                    
-                                </div>
-                                <div class="center card-action">
-                                    <a href="#!">Add To Cart</a>
-                                </div>
-                            </div>
-                        </div>                                       
+                                                             
                     </div>      
                 </div>
             </div>
@@ -382,6 +232,7 @@
                 $(document).ready(function(){
                     $('.sidenav').sidenav()
                     $('.parallax').parallax()
+                    $('select').formSelect()
                 })
             // End of Materialize components initialization 
         </script>
