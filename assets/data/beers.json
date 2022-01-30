@@ -68,11 +68,12 @@
         "beerCover": {
             "location": "ayinger-dunkel-weiss.png",
             "alternative": "Ayinger Dunkel"
-        }
+        },
+        "beerDescription": "Produced using the traditional double fermentation process, a Dunkel which Michael Jackson, the Beer Hunter, described as \"impenetrably dark with a golden-brown gleam; with a warm aroma and malty taste, while summoning up coffee taste sensations on going down.\""
     },
     {
         "id": 5,
-        "beerName": "Ayinger Helles",
+        "beerName": "Ayinger Weisse",
         "brewery": 1,
         "price": 1.39,
         "alcoholPercentage": {
@@ -85,7 +86,8 @@
         "beerCover": {
             "location": "ayinger-hell-weiss.png",
             "alternative": "Ayinger Hell"
-        }
+        },
+        "beerDescription": "Our Ayinger Ur-Weisse is an old-fashioned wheat with some fine roasted malt to give it more color and flavor than golden hefeweizen. It has an immense crown of lovely foam held proudly above a robe of translucent amber. On the palate, malt and yeast predominate, with a delicious balance of fruit and bread-like yeast."
     },
     {
         "id": 6,
@@ -120,7 +122,8 @@
         "beerCover": {
             "location": "dogfish-head-120min-ipa.png",
             "alternative": "Svetionik"
-        }
+        },
+        "beerDescription": "120 Minute IPA is brewed to a colossal 45-degree plato, boiled for a full two hours while being continuously hopped with high-alpha American hops, then dry-hopped daily in the fermenter for a month and aged for another month on whole-leaf hops!"
     },
     {
         "id": 8,
@@ -155,7 +158,8 @@
         "beerCover": {
             "location": "erdinger.jpg",
             "alternative": "Erdinger Weißbier"
-        }
+        },
+        "beerDescription": "Erdinger Weissbier is a classic German wheat beer, or Weissbier with an impressive array of aromas and flavours. Brewed by Erdinger in the heart of Bavaria, this Weissbier shows off a pale blonde body capped by an abundant creamy white head."
     },
     {
         "id": 10,
@@ -172,11 +176,12 @@
         "beerCover": {
             "location": "erdinger-dunkel.jpg",
             "alternative": "Erdinger Dunkel"
-        }
+        },
+        "beerDescription": "Erdinger Weissbier Dunkel is a rich and smooth wheat beer specialty from Erdinger Weissbräu. It owes its full-bodied flavor to the fine hops and dark malt used in its production. The dark beer specialty is brewed according to an age-old recipe."
     },
     {
         "id": 11,
-        "beerName": "Firestone Wookey Jack",
+        "beerName": "Wookey Jack",
         "brewery": 9,
         "price": 3.00,
         "alcoholPercentage": {
@@ -189,7 +194,8 @@
         "beerCover": {
             "location": "firestone-wookey-jack.png",
             "alternative": "Firestone Wookey Jack"
-        }
+        },
+        "beerDescription": "Big toasty malt flavors with balanced hop bitterness and spicy rye offer a full and complex texture with a refined bittered finish. A truly different IPA for dark beer fans."
     },
     {
         "id": 12,
@@ -206,7 +212,8 @@
         "beerCover": {
             "location": "flying-dog-bloodline.jpeg",
             "alternative": "FD Bloodline"
-        }
+        }, 
+        "beerDescription": "Bloodline defies genre: Hops for the hop-heads. Fruit for the rest. Sweet blood orange puree is added toward the end of fermentation to balance the citrusy sharpness of the hops and deliver a hard-charging ABV to keep the good times rolling."
     },
     {
         "id": 13,
@@ -223,7 +230,8 @@
         "beerCover": {
             "location": "flying-dog-doggie-style.jpg",
             "alternative": "FD Doggie Style"
-        }
+        },
+        "beerDescription": "The standard in pale ales, this beautiful amber liquid perfectly balances 4 different types of hops, then melds them together with Carastan malts to create an incredibly satisfying beer-flavored beer that tastes like beer."
     },
     {
         "id": 14,
@@ -240,11 +248,12 @@
         "beerCover": {
             "location": "hofbrau-dunkel.jpg",
             "alternative": "Hofbrau Dunkel"
-        }
+        },
+        "beerDescription": "Today, Hofbräu Dunkel - the archetypal Bavarian beer - is still as popular as ever. With its alcoholic content of around 5.5% volume and its spicy taste, it's a refreshing beer that suits all kinds of occasion. A beer in the traditional Munich style!"
     },
     {
         "id": 15,
-        "beerName": "Hofbräu Helles",
+        "beerName": "Hofbräu Original",
         "brewery": 6,
         "price": 0.89,
         "alcoholPercentage": {
@@ -257,11 +266,12 @@
         "beerCover": {
             "location": "hofbrau-original-hell.png",
             "alternative": "Hofbrau Helles"
-        }
+        },
+        "beerDescription": "A liter of Hofbräu Original! Luminous golden yellow with foamy white crown – you can already taste the refreshment: Slightly malty, full-bodied, mature and with an elegant finish."
     },
     {
         "id": 16,
-        "beerName": "OB Devian Dale",
+        "beerName": "DevianT Dale's",
         "brewery": 10,
         "price": 0.69,
         "alcoholPercentage": {
@@ -273,8 +283,9 @@
         ],
         "beerCover": {
             "location": "oskar-blues-devian-dale.png",
-            "alternative": "Oskar Blues Devian Dale"
-        }
+            "alternative": "Oskar Blues Deviant Dale"
+        },
+        "beerDescription": "Oskar Blues DevianT Dale’s IPA – Pours a golden orange color with a couple fingers of white head and plenty of lacing. Smells of sugary sweetness and citrusy hops, with a little pine and resin poking through as well. Taste is very sweet with tons of that citrus and pine hop flavor and just enough bitterness in the finish to balance out the sweet start. Mouthfeel is really nice, smooth, almost creamy, light but well balanced carbonation."
     },
     {
         "id": 17,
@@ -291,7 +302,8 @@
         "beerCover": {
             "location": "paulaner-dunkel.jpg",
             "alternative": "Paulaner Dunkel"
-        }
+        },
+        "beerDescription": "Then wheat, malt, and sparkling roast aroma. Weissbier Dunkel is a muscular beer. Unfiltered, strong, and nutty. At the same time, smooth and soft to the taste."
     },
     {
         "id": 18,
@@ -308,11 +320,12 @@
         "beerCover": {
             "location": "paulaner-hell.jpg",
             "alternative": "Paulaner Helles"
-        }
+        },
+        "beerDescription": "A true classic of quintessential Munich and Bavarian drinks. Clear and sparkling bright golden in the glass, crowned by a pure white head, it is usually drunk in the shade of a chestnut tree according to tradition."
     },
     {
         "id": 19,
-        "beerName": "Paulaner Weißbier",
+        "beerName": "Paulaner Münchner",
         "brewery": 6,
         "price": 1.29,
         "alcoholPercentage": {
@@ -323,9 +336,10 @@
             5, 6
         ],
         "beerCover": {
-            "location": "paulaner-weis.jpg",
-            "alternative": "Paulaner Weisbier"
-        }
+            "location": "paulaner-munchen.jpg",
+            "alternative": "Paulaner Munchner"
+        }, 
+        "beerDescription": "A beer which always goes down well: mild, elegant malts with a hint of sweetness and a soft hint of hops in the background. This is pure Bavarian life style!"
     },
     {
         "id": 20,
@@ -342,7 +356,8 @@
         "beerCover": {
             "location": "pinkus-pils.jfif",
             "alternative": "Pinkus Pilsner"
-        }
+        }, 
+        "beerDescription": "In the mouth, it is lightly pilsner bitter, with notes of malt. Nice beer. Pours a semi opaque deep yellow with a decent foamy head, nice carbonation and some visible sediment. Smell some grains ,slight Diacetyl (buttery) cracker,malt."
     },
     {
         "id": 21,
@@ -350,8 +365,8 @@
         "brewery": 13,
         "price": 1.49,
         "alcoholPercentage": {
-            "percentage": 8.5,
-            "percentageRange": 2
+            "percentage": 5.8,
+            "percentageRange": 1
         },
         "types": [
             3, 7
@@ -359,7 +374,8 @@
         "beerCover": {
             "location": "piratelife-black.png",
             "alternative": "Pirate Life Black"
-        }
+        },
+        "beerDescription": "Deep, dark and fragrant, it combines a colossal mash bill with four of our favourite international hop varietals. Once poured, aromas of cut grass, musk lolly and coffee waft from the pint. The bitterness is on the low side, giving rise to an extravagant palate of espresso, pine and mint slice."
     },
     {
         "id": 22,
@@ -376,7 +392,8 @@
         "beerCover": {
             "location": "pulfer-hefe.jpg",
             "alternative": "Pulfer Hefe"
-        }
+        }, 
+        "beerDescription": "Lots of wheat and oats and touch of lactose for creamy body and there you go - crazy wheat beer! Silky and smooth, it really feels like a beach cake punch."
     },
     {
         "id": 23,
@@ -384,7 +401,7 @@
         "brewery": 15,
         "price": 1.89,
         "alcoholPercentage": {
-            "percentage": 5.9,
+            "percentage": 5.6,
             "percentageRange": 1
         },
         "types": [
@@ -393,11 +410,12 @@
         "beerCover": {
             "location": "sierra-nevada-apa.png",
             "alternative": "Sierra Nevada APA"
-        }
+        }, 
+        "beerDescription": "Sierra Nevada Pale Ale is a delightful example of the classic pale ale style. It has a deep amber color and a exceptionally full-bodied, complex character. The fragrant bouquet and spicy flavor are the results of the generous use of the best Cascade hops."
     },
     {
         "id": 24,
-        "beerName": "Summer Solstice Ale",
+        "beerName": "Summer Solstice",
         "brewery": 16,
         "price": 1.20,
         "alcoholPercentage": {
@@ -410,7 +428,8 @@
         "beerCover": {
             "location": "summer-solstice-cream.png",
             "alternative": "Summer Solstice Cream Ale"
-        }
+        },
+        "beerDescription": "Summer Solstice is a slightly sweet, malty session beer with a creamy mouth feel and clean finish. With hints of caramel in the nose and a touch of spice, it's become affectionately known as “summer in a can”. The unique flavors and superior drinkability make for the ultimate refreshment on a hot summer day."
     },
     {
         "id": 25,
@@ -426,8 +445,9 @@
         ],
         "beerCover": {
             "location": "sweet-water-apa.jpg",
-            "alternative": "Sweet Water APA"
-        }
+            "alternative": "SweetWater APA"
+        },
+        "beerDescription": "SweetWater 420 Extra Pale Ale is a tasty West Coast Style Pale Ale with a stimulating hops character and a crisp finish. Brewed with Munich, 40L, and 2-Row malts and Centennial and Cascade hops."
     },
     {
         "id": 26,
@@ -443,8 +463,9 @@
         ],
         "beerCover": {
             "location": "sweet-water-ipa.jpg",
-            "alternative": "Sweet Water IPA"
-        }
+            "alternative": "SweetWater IPA"
+        }, 
+        "beerDescription": "SweetWater endowed this straight up juice bomb with a double dry hop of Mosaic, Citra, El Dorado and Azacca for a blast of mango, stone fruit, lime and pine. It's not a mirage, but a tasty refreshing oasis in your pursuit of haziness."
     },
     {
         "id": 27,
@@ -461,7 +482,8 @@
         "beerCover": {
             "location": "victory-prima-pils.png",
             "alternative": "Victory Prima Pils"
-        }
+        }, 
+        "beerDescription": "A crisp yet distinct Pilsner brewed with German hops that bring vivid notes of floral and spice with citrus and lemon. This is truly brilliant, bringing nuanced complexity together with smooth, easy drinking."
     },
     {
         "id": 28,
@@ -478,7 +500,8 @@
         "beerCover": {
             "location": "weihenstephaner-weiss.jpg",
             "alternative": "Weihenstephaner Weissbier"
-        }
+        },
+        "beerDescription": "Weihenstephaner's Hefe Weiss is an impressive Weissbier brewed by the world's oldest operational brewery. This unfiltered Wheat beer pours cloudy pale with a bouquet full of fruity, fresh scents accompanied by intense wheat and spice notes, including coriander, clove and nutmeg."
     },
     {
         "id": 29,
@@ -495,7 +518,8 @@
         "beerCover": {
             "location": "genesee-cream.jpg",
             "alternative": "Genesee Cream Ale"
-        }
+        }, 
+        "beerDescription": "The goal was simple: brew a beer that's smooth like a lager and crisp like an ale. That's how Genesee created a true American original in Cream Ale. This award-winning beer has been the style standard since it was first brewed in 1960 and remains just as smooth and flavorful as it's always been. Year-round Favorite!"
     },
     {
         "id": 30,
@@ -512,6 +536,7 @@
         "beerCover": {
             "location": "newbelgium-dayblazer-cream.png",
             "alternative": "New Belgium Dayblazer"
-        }
+        },
+        "beerDescription": "A deliciously refreshing golden ale, at 4.8% ABV, brewed with the finest malts and hops giving a sweet crisp citrus finish with just a hint of honey."
     }
 ]

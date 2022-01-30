@@ -119,8 +119,10 @@ html body blockquote.exceptionquote {
   padding-right: 1rem;
 }
 
-html body nav #logo-container img {
-  width: 45%;
+html body nav img {
+  width: 25%;
+  -webkit-transform: translate(-50%, -10%) !important;
+          transform: translate(-50%, -10%) !important;
 }
 
 html body nav li a {
@@ -172,6 +174,10 @@ html body main input[type="checkbox"]:checked + span:not(.lever):before {
 
 html body main .product-image {
   height: var(--cardHeight);
+}
+
+html body main #addToCart {
+  margin: 0 !important;
 }
 
 html body footer #footer-logo {

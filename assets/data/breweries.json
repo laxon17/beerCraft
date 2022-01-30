@@ -1,78 +1,78 @@
 [
     {
         "id": 1,
-        "name": "Ayinger"
+        "title": "Ayinger"
     },
     {
         "id": 2,
-        "name": "Dog Fish"
+        "title": "Dog Fish"
     },
     {
         "id": 3,
-        "name": "Dogma"
+        "title": "Dogma"
     },
     {
         "id": 4,
-        "name": "Erdinger"
+        "title": "Erdinger"
     },
     {
         "id": 5,
-        "name": "Flying Dog"
+        "title": "Flying Dog"
     },
     {
         "id": 6,
-        "name": "Hofbrau"
+        "title": "Hofbrau"
     },
     {
         "id": 7,
-        "name": "Paulaner"
+        "title": "Paulaner"
     },
     {
         "id": 8,
-        "name": "Sweet Water"
+        "title": "Sweet Water"
     },
     {
         "id": 9,
-        "name": "Firestone"
+        "title": "Firestone"
     },
     {
         "id": 10,
-        "name": "Oscar Blue"
+        "title": "Oscar Blue"
     },
     {
         "id": 11,
-        "name": "New Belgium"
+        "title": "New Belgium"
     },
     {
         "id": 12,
-        "name": "Pinkus"
+        "title": "Pinkus"
     },
     {
         "id": 13,
-        "name": "Pirate Life"
+        "title": "Pirate Life"
     },
     {
         "id": 14,
-        "name": "Pulfer"
+        "title": "Pulfer"
     },
     {
         "id": 15,
-        "name": "Sierra Nevada"
+        "title": "Sierra Nevada"
     },
     {
         "id": 16,
-        "name": "Summer Solstice"
+        "title": "Summer Solstice"
     },
     {
         "id": 17,
-        "name": "Weihenstephaner"
+        "title": "Weihenstephaner"
     },
     {
         "id": 18,
-        "name": "Victory Prima"
+        "title": "Victory Prima"
     },
     {
         "id": 19,
-        "name": "Genesee"
+        "title": "Genesee"
     }
 ]

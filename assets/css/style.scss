@@ -85,10 +85,9 @@ html {
             }
         }
         nav {
-            #logo-container {
-                img {
-                    width: 45%;
-                }
+            img {   
+                width: 25%;
+                transform: translate(-50%,-10%) !important;
             }
             li {
                 a {
@@ -138,6 +137,9 @@ html {
             }
             .product-image {
                 height: var(--cardHeight);
+            }
+            #addToCart {
+                margin: 0 !important;
             }
         }
         footer {

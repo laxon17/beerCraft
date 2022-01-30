@@ -1,34 +1,34 @@
 [
     {
         "id": 1,
-        "name": "APA"
+        "title": "APA"
     }, 
     {
         "id": 2,
-        "name": "Cream Ale"
+        "title": "Cream Ale"
     }, 
     {
         "id": 3,
-        "name": "Dunkel"
+        "title": "Dunkel"
     }, 
     {
         "id": 4,
-        "name": "German Pilsner"
+        "title": "German Pilsner"
     }, 
     {
         "id": 5,
-        "name": "Helles"
+        "title": "Helles"
     }, 
     {
         "id": 6,
-        "name": "Hefe Weisse"
+        "title": "Hefe Weisse"
     }, 
     {
         "id": 7,
-        "name": "IPA"
+        "title": "IPA"
     },
     {
         "id": 8,
-        "name": "Milk Stout"
+        "title": "Milk Stout"
     } 
 ]
