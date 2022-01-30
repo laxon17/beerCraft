@@ -104,7 +104,7 @@ function loadNavigation() {
     const collapsedList = document.getElementsByClassName('sideNavCollapsed')[0]
     
     let pagePath = window.location.pathname
-    let pagePathTrimmed = pagePath.substring(1, pagePath.indexOf('.'))
+    let pagePathTrimmed = pagePath.substring(pahePath.indexOf('/', 2), pagePath.indexOf('.'))
 
     fetchData('navigation').then(items => {
         for(let item of items) {
