@@ -85,7 +85,6 @@ function loadTypes(typeIds) {
     let types = fetchData('types')
     let output = ''
 
-    console.log(types)
 
     return output
 }
