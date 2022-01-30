@@ -85,6 +85,7 @@ function loadTypes(typeIds) {
     let types = fetchData('types')
     let output = ''
 
+    console.log(types)
 
     return output
 }
@@ -103,7 +104,7 @@ function loadNavigation() {
     const collapsedList = document.getElementsByClassName('sideNavCollapsed')[0]
     
     let pagePath = window.location.pathname
-    let pagePathTrimmed = pagePath.substring(pagePath.indexOf('/', 2), pagePath.indexOf('.'))
+    let pagePathTrimmed = pagePath.substring(1, pagePath.indexOf('.'))
 
     fetchData('navigation').then(items => {
         for(let item of items) {
