@@ -1,3 +1,18 @@
+$(window).on('load', () => {
+    $('#intro').hide()
+    setTimeout(() => {
+        $('.loader').animate({
+            opacity: 0
+        }, 1000)
+    }, 2000)
+    setTimeout(() => {
+        $('.loader').remove()
+    }, 3000)
+    setTimeout(() => {
+        $('#intro').fadeIn(1000)
+    },3000)
+})
+
 async function fetchData(fileName) {
     try {
         res = await fetch(`./assets/data/${fileName}.json`)
@@ -141,20 +156,7 @@ document.querySelectorAll('input').forEach(checkbox => {
 
 // INTRO LOADING SCREEN FADEOUT AND REMOVING
 
-$(window).on('load', () => {
-    $('#intro').hide()
-    setTimeout(() => {
-        $('.loader').animate({
-            opacity: 0
-        }, 1000)
-    }, 2000)
-    setTimeout(() => {
-        $('.loader').remove()
-    }, 3000)
-    setTimeout(() => {
-        $('#intro').fadeIn(1000)
-    },3000)
-})
+
 
 // END OF INTRO LOADING SCREEN FADEOUT AND REMOVING
 
