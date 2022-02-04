@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+        <link rel="stylesheet" type="text/css" href="assets/css/responsive.css" />
+        <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+        <link rel="icon" href="./assets/img/hops.png" />
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="author" content="Lazar Lalović, 62/20" />
+        <meta name="description" content="Welcome to worldCraft, the biggest Craft Beer community!" />
+        <meta name="keywords" content="craft beer, ipa craft, apa craft, best beer, sol beer, stout beer, brew, brewery, cream ale, blonde ale" />
+        <script src="assets/js/main.js" defer></script>
+        <script src="https://kit.fontawesome.com/51a8d0c9c6.js" crossorigin="anonymous"></script>
+        <title>worldCraft - Welcome</title>
+    </head>
+
+    <body>
+    <!-- DOM Loading animation -->
+        <!-- <div class="loader">
+            <img src="./assets/img/beer-load.gif" alt="Beer Loading" />
+        </div> -->
+    <!-- End of DOM Loading animation -->
+
+    <!-- Responsive navigation menu with custom logo -->
+        <header class="navbar-fixed">
+            <nav class="orange lighten-1">
+                <div class="container">
+                    <div class="nav-wrapper">
+                        <img class="brand-logo center" src="./assets/img/hops.png" alt="Hops with beer" />
+                        <a href="#" data-target="mobile-nav" class="sidenav-trigger">
+                            <i class="material-icons white-text">menu</i>
+                        </a>
+                        <ul id="visible-links" class="left hide-on-med-and-down navLinks">  
+                            <!-- Content inserted from navigation.json -->
+                        </ul>
+                        <ul class="right">  
+                            <li>
+                                <i data-target="cart-tab" class="sidenav-trigger material-icons white-text">shopping_cart</i>
+                            </li>
+                            <li>
+                                
+                                <i data-target="fav-tab" class="sidenav-trigger material-icons white-text">favorite</i>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <!-- Hidden navigation menu -->
+            <ul class="sidenav sideNavCollapsed orange lighten-7" id="mobile-nav">
+                <!-- Content inserted from navigation.json -->
+            </ul>
+        <!-- End of hidden navigation menu -->
+
+        <!-- Cart & Fav tabs -->
+            <!-- Favorites  -->
+                <ul id="fav-tab" class="sidenav2 sidenav orange lighten-7">
+                    <h4 class="center">Favorites</h4>
+                    <li><div class="divider"></div></li>
+                    
+                </ul>    
+             <!-- End of favorites -->
+
+            <!-- Shopping cart -->
+                <ul id="cart-tab" class="sidenav2 sidenav orange lighten-7">
+                    <h4 class="center">Shopping cart</h4>
+                    <li><div class="divider"></div></li>
+                    
+                </ul>
+            <!-- End of shopping cart -->
+        <!-- End of Cart & Fav tabs -->
+
+    <!-- End of responsive navigation menu -->
+
+    <!-- Main content of page -->
+        <main>
+            <div class="parallax-container">
+                <div class="parallax">
+                    <img src="./assets/img/brewery.jpg">
+                </div>
+                <div class="container" id="intro">
+                    <h1 class="white-text intro-text">U izradi</h1>
+                </div>
+            </div>
+        </main>
+    <!-- End of main content of page -->
+
+    <!-- Footer of the page -->
+        <footer class="page-footer grey darken-3">
+            <div class="container">
+                <div class="row">
+                    <div class="col m3 l3 s12 offset-m1 offset-l1 center-on-small-only">
+                        <h5 class="white-text">Useful links</h5>
+                        <ul>
+                            <li><a class="white-text" href="#">What is craft beer?</a></li>
+                            <li><a class="white-text" href="#">How is craft beer brewed?</a></li>
+                            <li><a class="white-text" href="#">Brewery near me</a></li>
+                            <li><a class="white-text" href="#">SARS-CoV-2 info.</a></li>
+                        </ul>
+                    </div>
+                    <div class="col m3 l3 s12 offset-m1 offset-l1 center-on-small-only">
+                        <h5 class="white-text">Contact us</h5>
+                        <ul id="contact-methods">
+                            <li><a class="white-text" href="./assets/settings/feed.rss">RSS News</a></li>
+                            <li>Mail: lazarlalovic@gmail.com</li>
+                            <li>Phone: 064 / 923 82 52</li>
+                            <li>Street: Zdravka Celara 16</li>
+                        </ul>
+                    </div>
+                    <div class="col m3 l3 s12 offset-m1 offset-l1 center-on-small-only">
+                        <h5 class="white-text">Site assets</h5>
+                        <ul>
+                            <li><a class="white-text" href="#">Documentation</a></li>
+                            <li><a class="white-text" href="#">Sitemap</a></li>
+                            <li><a class="white-text" href="#">RSS</a></li>
+                            <li><a class="white-text" href="#">main.js</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>  
+            <div class="footer-copyright grey darken-4">
+                <div class="container center-align">
+                    Copyright &copy; Lazar Lalovic 2022. All Rights Reserved.
+                </div>
+            </div>
+        </footer>
+    <!-- End of page footer -->
+
+    <!-- Back to top btn -->
+        <div class="fixed-action-btn">
+            <button id="toTopBtn"  class="btn-large orange btn-floating waves-effect waves-light scale-transition scale-out">
+                <i class="large material-icons">keyboard_arrow_up</i>
+            </button>
+        </div>
+    <!-- End of back to top btn -->
+
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    </body>
+</html>

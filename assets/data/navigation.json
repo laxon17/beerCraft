@@ -1,18 +1,18 @@
 [
     {
         "value": "Home",
-        "location": "index"
+        "location": "/"
     },
     {
         "value": "Shop",
-        "location": "shop"
+        "location": "/shop.html"
     },
     {
         "value": "About",
-        "location": "about"
+        "location": "/about.html"
     },
     {
         "value": "Author",
-        "location": "author"
+        "location": "/author.html"
     }
 ]
