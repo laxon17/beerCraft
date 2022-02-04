@@ -1,6 +1,6 @@
 let pageLink = window.location.pathname
 
-if(pageLink == '/crossfader/shop.html'){
+if(pageLink == '/worldCraft/shop.html'){
     fetchData('beers').then(beer => {
         localStorage.setItem('beers', JSON.stringify(beer))
     })
