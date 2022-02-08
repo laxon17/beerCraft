@@ -505,7 +505,7 @@
     },
     {
         "id": 29,
-        "beerName": "Genesee CA",
+        "beerName": "Creamee",
         "brewery": 19,
         "price": 1.49,
         "alcoholPercentage": {
@@ -523,7 +523,7 @@
     },
     {
         "id": 30,
-        "beerName": "NB Dayblazer",
+        "beerName": "Dayblazer",
         "brewery": 11,
         "price": 1.09,
         "alcoholPercentage": {

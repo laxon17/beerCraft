@@ -1,99 +1,112 @@
 let pageLink = window.location.pathname
+const links = fetchLocalStorage('navigation')
+loadNavigation(links)
 
-if(pageLink == '/crossfader/shop.html'){
-    fetchData('beers').then(beer => {
-        localStorage.setItem('beers', JSON.stringify(beer))
-    })
+if(pageLink == '/worldCraft/shop.html'){
+
     
-    fetchData('breweries').then(brewery => {
-        localStorage.setItem('breweries', JSON.stringify(brewery))
-    })
     
-    fetchData('types').then(type => {
-        localStorage.setItem('types', JSON.stringify(type))
-    })
+    const beers = fetchLocalStorage('beers')
+    const breweries = fetchLocalStorage('breweries')
+    const types = fetchLocalStorage('types')
+    const percentages = fetchLocalStorage('alc-percentage')
     
-    fetchData('alc-percentage').then(percentage => {
-        localStorage.setItem('alc-percentages', JSON.stringify(percentage))
-    })
-    
-    let beers = JSON.parse(localStorage.getItem('beers'))
-    let breweries = JSON.parse(localStorage.getItem('breweries'))
-    let types = JSON.parse(localStorage.getItem('types'))
-    let percentages = JSON.parse(localStorage.getItem('alc-percentages'))
     
     loadBeers(beers)
     loadFilters(breweries, 'brandFilter', 'beerBrand')
     loadFilters(types, 'typeFilter', 'beerType')
     loadFilters(percentages, 'alcFilter', 'beerAlcohol')
     
-    function filterByBrewery() {
-        let choosenBreweryIds = []
-        let choosenBreweries = document.querySelectorAll('input[name="beerBrand"]:checked')
+    function filterByBrewery(beerArray) {
+        let chosenBreweryIds = []
+        let chosenBreweries = document.querySelectorAll('input[name="beerBrand"]:checked')
         
-        choosenBreweries.forEach(brewery => {
-            choosenBreweryIds.push(Number(brewery.value))
+        chosenBreweries.forEach(brewery => {
+            chosenBreweryIds.push(Number(brewery.value))
         })
-    
-        let filteredBeers = beers.filter(beer => {
-            for(let choosenId of choosenBreweryIds) {
-                if(beer.brewery === choosenId) return true
-            }
-        })    
-    
-        if(filteredBeers.length) loadBeers(filteredBeers)
-        else loadBeers(beers)
+        
+        if(chosenBreweryIds.length) {
+            return beerArray.filter(beer => 
+                chosenBreweryIds.includes(beer.brewery)    
+            )
+        }
+        
+        return beerArray
     }
     
-    function filterByType() {
-        let choosenTypeIds = []
-        let choosenTypes = document.querySelectorAll('input[name="beerType"]:checked')
+    function filterByType(beerArray) {
+        let chosenTypeIds = []
+        let chosenTypes = document.querySelectorAll('input[name="beerType"]:checked')
         
-        choosenTypes.forEach(type => {
-            choosenTypeIds.push(Number(type.value))
+        chosenTypes.forEach(type => {
+            chosenTypeIds.push(Number(type.value))
         })
     
-        let filteredBeers = beers.filter(beer => {
-            for(let choosenId of choosenTypeIds) {
-                for(let beerType of beer.types) {
-                    if(beerType === choosenId) return true
-                }
-            }
-        })    
-    
-        if(filteredBeers.length) loadBeers(filteredBeers)
-        else loadBeers(beers)
+        if(chosenTypeIds.length) {
+            return beerArray.filter(beer => 
+                beer.types.some(type => 
+                    chosenTypeIds.includes(type)    
+                ) 
+            )
+        }
+        
+        return beerArray
     }
     
-    function filterByPercentage() {
-        let choosenPercentageIds = []
-        let choosenPercentages = document.querySelectorAll('input[name="beerAlcohol"]:checked')
+    function filterByPercentage(beerArray) {
+        let chosenPercentageIds = []
+        let chosenPercentages = document.querySelectorAll('input[name="beerAlcohol"]:checked')
         
-        choosenPercentages.forEach(percentage => {
-            choosenPercentageIds.push(Number(percentage.value))
+        chosenPercentages.forEach(percentage => {
+            chosenPercentageIds.push(Number(percentage.value))
         })
     
-        let filteredBeers = beers.filter(beer => {
-            for(let choosenRange of choosenPercentageIds) {
-                if(beer.alcoholPercentage.percentageRange === choosenRange) return true
-            }
-        })    
-    
-        if(filteredBeers.length) loadBeers(filteredBeers)
-        else loadBeers(beers)
+        if(chosenPercentageIds.length) {
+            return beerArray.filter(beer => 
+                chosenPercentageIds.includes(beer.alcoholPercentage.percentageRange)    
+            )
+        }
+        
+        return beerArray
     }
-    
-    document.querySelectorAll('input[name="beerBrand"]').forEach(box => {
-        box.addEventListener('change', filterByBrewery)
-    })
-    
-    document.querySelectorAll('input[name="beerType"]').forEach(box => {
-        box.addEventListener('change', filterByType)
-    })
-    
-    document.querySelectorAll('input[name="beerAlcohol"]').forEach(box => {
-        box.addEventListener('change', filterByPercentage)
-    })
+
+    document.getElementById('sortSelect').addEventListener('change', beersFiltered)
+
+    function sortBeers(beerArray) {
+        let sortType = document.getElementById('sortSelect').value
+        switch(sortType) {
+            case 'namedesc': 
+                    return beerArray.sort((previous, next) =>
+                        previous.beerName < next.beerName ? 1 : -1
+                    )
+            case 'priceasc': 
+                    return beerArray.sort((previous, next) =>
+                        previous.price > next.price ? 1 : -1
+                    )
+            case 'pricedesc': 
+                    return beerArray.sort((previous, next) =>
+                       previous.price < next.price ? 1 : -1
+                    )
+            default: 
+                    return beerArray.sort((previous, next) =>
+                        previous.beerName > next.beerName ? 1 : -1
+                    )
+        }
+    }
+
+    document.getElementById('searchBeer').addEventListener('keyup', beersFiltered)
+
+    function searchBeer(beerArray){
+        let searchBeerValue = document.getElementById('searchBeer').value.toLowerCase()
+
+		if(searchBeerValue) {
+			return beerArray.filter(beer => {
+				return beer.beerName.toLowerCase().indexOf(searchBeerValue) !== -1
+			})
+        }
+
+		return beerArray
+	}
     
     function loadFilters(filtersArray, filterContainer, filterName) {
         const filterList = document.getElementById(filterContainer)
@@ -110,9 +123,23 @@ if(pageLink == '/crossfader/shop.html'){
             `
         }
         filterList.innerHTML = filterItems
+
+        document.querySelectorAll(`input[name="${filterName}"]`).forEach(box => {
+            box.addEventListener('change', beersFiltered)
+        })
+    }
+
+    function beersFiltered() {
+        loadBeers(beers)
     }
     
     function loadBeers(beerArray) {
+        beerArray = filterByBrewery(beerArray)
+        beerArray = filterByType(beerArray)
+        beerArray = filterByPercentage(beerArray)
+        beerArray = searchBeer(beerArray)
+        beerArray = sortBeers(beerArray)
+
         const beerContainer = document.getElementById('beerContainer')
         let beerCard = ''
         
@@ -122,12 +149,12 @@ if(pageLink == '/crossfader/shop.html'){
                     <div class="card">
                         <div class="card-image">
                             <img class="product-image" src="./assets/img/beers/${beer.beerCover.location}" alt="${beer.beerCover.alternative}">
-                            <a href="#!" class="halfway-fab btn-floating orange"><i class="material-icons">favorite</i></a>
+                            <a class="halfway-fab btn-floating orange add-to-favorites"><i class="material-icons">favorite</i></a>
                         </div>
                         <div class="card-content">
                             <span class="card-title activator grey-text text-darken-4">${beer.beerName}<i class="material-icons right">more_vert</i></span>
-                            <p class="small-text pt-1">Brand: ${showBrand(beer.brewery)}</p>
-                            <p class="small-text pt-1">Type: ${showTypes(beer.types)}</p>
+                            <p class="small-text pt-1">${showBrand(beer.brewery)}</p>
+                            <p class="small-text pt-1">${showTypes(beer.types)}</p>
                             <p class="small-text pt-1">Alc. % ${beer.alcoholPercentage.percentage}</p>
                             <p id="beer-price" class="pt-2 center">&euro; ${beer.price}</p>
                         </div>
@@ -144,7 +171,7 @@ if(pageLink == '/crossfader/shop.html'){
                 </div> 
             `
         }
-        beerContainer.innerHTML = beerCard
+        beerContainer.innerHTML = (beerCard) ? beerCard : `<h3 class="grey-text lighten-5">Ooops, no beers found!</h3>` 
     }
     
     function showTypes(typeIds) {
@@ -171,7 +198,38 @@ if(pageLink == '/crossfader/shop.html'){
         }
     }
     
-    
+    Array.from(document.getElementsByClassName('add-to-favorites')).forEach(btn => {
+        btn.addEventListener('click', addToFavorites)
+    })
+
+    function addToFavorites(clickedBeer) {
+        let favorites
+        let targetBeer = clickedBeer.target.parentElement.parentElement.parentElement
+        let beerInfo = []
+        let beerName = targetBeer.children[1].children[0].innerHTML
+        let theName = beerName.substring(0, beerName.indexOf('<'))
+        let imgSource = targetBeer.firstElementChild.firstElementChild.getAttribute('src')
+
+        beerInfo.push(imgSource, theName)
+
+        Favorites.addFavorite(beerInfo)
+        
+    }
+
+    class Favorites {
+        static getFavorite() {
+            let favorites
+            if(localStorage.getItem('favorites') === null) favorites = [] 
+            else favorites = JSON.parse(localStorage.getItem('favorites'))
+            return favorites
+        }
+        static addFavorite(beerInfo) {
+            let favorites = Favorites.getFavorite()
+            favorites.push(beerInfo)
+            localStorage.setItem('favorites', JSON.stringify(favorites))
+        }
+
+    }
     
     // // LISTEN IF A FILTER IS SELECTED, AND ENABLE FILTER CLEAR BTN
     
@@ -181,6 +239,7 @@ if(pageLink == '/crossfader/shop.html'){
         })
         document.querySelector('input').value = ''
         document.getElementById('clearFilters').disabled = true
+        document.getElementById('sortSelect').selectedIndex = 0
         loadBeers(beers)
     }
     
@@ -188,20 +247,17 @@ if(pageLink == '/crossfader/shop.html'){
         if(!this.disabled) clearAllFilters()
     })
     
-    document.querySelectorAll('input').forEach(checkbox => {
+    document.querySelectorAll('input').forEach(element => {
         const clearBtn = document.getElementById('clearFilters')
-        addEventListener('change', () => {
+        element.addEventListener('change', () => {
             if(clearBtn.disabled) clearBtn.disabled = false 
         })
-    })
-    
-    // // END OF FILTER CLEAR
-    
+    })    
 }
 
-pageLoad()
+
 scrollToTopBtn()
-loadNavigation()
+
 // LOAD ALL JSONS IN LOCAL STORAGE
 
 async function fetchData(fileName) {
@@ -213,36 +269,41 @@ async function fetchData(fileName) {
     }
 }
 
+function fetchLocalStorage(file) {
+    fetchData(file).then(instance => {
+        localStorage.setItem(file, JSON.stringify(instance))
+    })
+    return JSON.parse(localStorage.getItem(file))
+}
 
 // FETCH AND CREATE NAVIGATION LINKS
-    function loadNavigation() {    
+    function loadNavigation(data) {    
         const visibleList = document.getElementById('visible-links')
         const collapsedList = document.getElementsByClassName('sideNavCollapsed')[0]
         
         let pagePath = window.location.pathname
     
-        fetchData('navigation').then(items => {
-            for(let item of items) {
-                let listItem = document.createElement('li')
-                let linkName = document.createTextNode(item.value)
-                let listLink = document.createElement('a')
-                    listLink.href = `${item.location}`
-                    listLink.append(linkName)
-                    pagePath === item.location ? listItem.className = 'active' : listItem.className = ''
-                    listItem.append(listLink)
-                    collapsedList.append(listItem)
-            }
-            for(let item of items) {
-                let listItem = document.createElement('li')
-                let linkName = document.createTextNode(item.value)
-                let listLink = document.createElement('a')
-                    listLink.href = `${item.location}`
-                    listLink.append(linkName)
-                    pagePath === item.location ? listItem.className = 'active' : listItem.className = ''
-                    listItem.append(listLink)
-                    visibleList.append(listItem)
-            }
-        })
+        for(let link of data) {
+            let listItem = document.createElement('li')
+            let linkName = document.createTextNode(link.value)
+            let listLink = document.createElement('a')
+                listLink.href = `${link.location}`
+                listLink.append(linkName)
+                pagePath === link.location ? listItem.className = 'active' : listItem.className = ''
+                listItem.append(listLink)
+                collapsedList.append(listItem)
+        }
+        for(let link of data) {
+            let listItem = document.createElement('li')
+            let linkName = document.createTextNode(link.value)
+            let listLink = document.createElement('a')
+                listLink.href = `${link.location}`
+                listLink.append(linkName)
+                pagePath === link.location ? listItem.className = 'active' : listItem.className = ''
+                listItem.append(listLink)
+                visibleList.append(listItem)
+        }
+
     }    
 // END OF FETCH AND CREATE NAVIGATION LINKS
 

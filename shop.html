@@ -21,9 +21,9 @@
 
     <body>
     <!-- DOM Loading animation -->
-        <div class="loader">
+        <!-- <div class="loader">
             <img src="./assets/img/beer-load.gif" alt="Beer Loading" />
-        </div>
+        </div> -->
     <!-- End of DOM Loading animation -->
 
     <!-- Responsive navigation menu with custom logo -->
@@ -43,7 +43,6 @@
                                 <i data-target="cart-tab" class="sidenav-trigger material-icons white-text">shopping_cart</i>
                             </li>
                             <li>
-                                
                                 <i data-target="fav-tab" class="sidenav-trigger material-icons white-text">favorite</i>
                             </li>
                         </ul>
@@ -63,13 +62,31 @@
                 <ul id="fav-tab" class="sidenav2 sidenav orange lighten-7">
                     <h4 class="center">Favorites</h4>
                     <li><div class="divider"></div></li>
-                    
+                    <ul id="favorites-container" class="pl-1 pt-1">
+                        <li>
+                            <div class="row center">
+                                <div class="col s12">
+                                    <img src="./assets/img/beers/albino-ipa.png" class="responsive-img" alt="">
+                                </div>
+                                <div class="col s8">
+                                    <h5>Albino</h5>
+                                </div>
+                                <div class="col s4 pt-1">
+                                    <a><i class="orange-text material-icons">close</i></a>
+                                </div>
+                            </div>
+                        </li>
+                        <li><div class="divider"></div></li>
+                        <li>
+                            <a class="btn btn-medium orange">Remove all</a>
+                        </li>
+                    </ul>
                 </ul>    
             <!-- End of favorites -->
 
             <!-- Shopping cart -->
                 <ul id="cart-tab" class="sidenav2 sidenav orange lighten-7">
-                    <h4 class="center">Shopping cart</h4>
+                    <h4 class="center">Cart</h4>
                     <li><div class="divider"></div></li>
                     
                 </ul>
@@ -150,8 +167,7 @@
                                 </div>
                                 <div class="input-field">
                                     <select id="sortSelect">
-                                        <option value="" disabled selected>Sort by</option>
-                                        <option value="nameasc"> Name ASC</option>
+                                        <option value="nameasc" selected> Name ASC</option>
                                         <option value="namedesc"> Name DESC</option>
                                         <option value="priceasc"> Price ASC</option>
                                         <option value="pricedesc"> Price DESC</option>

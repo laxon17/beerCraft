@@ -65,6 +65,10 @@ html .pt-3 {
   padding-top: 3rem !important;
 }
 
+html .pl-1 {
+  padding-left: 1rem !important;
+}
+
 html .small-text {
   font-size: .8rem !important;
 }
@@ -149,6 +153,10 @@ html body nav li a {
 html body nav li i {
   margin-right: 10px;
   cursor: pointer;
+}
+
+html body main .card-content {
+  padding-left: 15px !important;
 }
 
 html body main .parallax-container {
