@@ -3,9 +3,10 @@ const links = fetchLocalStorage('navigation')
 loadNavigation(links)
 
 if(pageLink == '/worldCraft/shop.html'){
+    shopPage() 
+}
 
-    
-    
+function shopPage() {
     const beers = fetchLocalStorage('beers')
     const breweries = fetchLocalStorage('breweries')
     const types = fetchLocalStorage('types')
@@ -252,9 +253,8 @@ if(pageLink == '/worldCraft/shop.html'){
         element.addEventListener('change', () => {
             if(clearBtn.disabled) clearBtn.disabled = false 
         })
-    })    
+    })   
 }
-
 
 scrollToTopBtn()
 
