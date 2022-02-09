@@ -155,6 +155,19 @@ html body nav li i {
   cursor: pointer;
 }
 
+html body main .section2 {
+  padding: 0;
+  margin: 0;
+  height: 50vh;
+}
+
+html body main iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  outline: 0;
+}
+
 html body main .card-content {
   padding-left: 15px !important;
 }
@@ -168,18 +181,38 @@ html body main .container2 {
   height: 80vh !important;
 }
 
+html body main .container3 {
+  height: 80vh !important;
+  padding-top: 70px;
+}
+
+html body main .container3 .form-wrapper {
+  padding: 1rem;
+  position: relative;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.7);
+}
+
 html body main #beer-price {
   font-size: 1.5rem !important;
   color: #0abd90;
 }
 
-html body main .input-field input[type="text"]:focus {
+html body main input[type="radio"]:checked + span::after {
+  border: 2px solid #ffb223;
+  background-color: #ffb223 !important;
+}
+
+html body main .input-field input[type="text"]:focus, html body main .input-field input[type="email"]:focus {
   border-bottom-color: #ffb223 !important;
   -webkit-box-shadow: 0 1px 0 0 #ffb223 !important;
           box-shadow: 0 1px 0 0 #ffb223 !important;
 }
 
-html body main .input-field input[type="text"]:focus + label {
+html body main .input-field input[type="text"]:focus + label, html body main .input-field input[type="email"]:focus + label {
   color: #ffb223 !important;
 }
 
@@ -205,8 +238,49 @@ html body main #addToCart {
   margin: 0 !important;
 }
 
-html body footer #footer-logo {
-  -webkit-filter: grayscale(100%);
-          filter: grayscale(100%);
+html body main .textarea {
+  width: 100%;
+  height: 180px;
+  border: 0;
+  outline: 0;
+  color: #fff;
+  border-bottom: 1px solid #b4b4b4;
+  padding: 1rem;
+  resize: none;
+  -webkit-transition: all 300ms ease;
+  transition: all 300ms ease;
+}
+
+html body main .textarea:focus {
+  border: 0;
+  outline: 0;
+  border-bottom: 1px solid #ffb223 !important;
+}
+
+html body main .textarea:focus + label {
+  color: #ffb223;
+}
+
+html body main .fail {
+  border-bottom-color: red !important;
+}
+
+html body main .pass {
+  border-bottom-color: teal !important;
+}
+
+html body main label {
+  font-size: 16px !important;
+}
+
+html body main label::after {
+  margin-left: 7px;
+  content: attr(data-important);
+  color: red;
+  font-size: 1.3rem;
+}
+
+html body footer {
+  margin-top: 0 !important;
 }
 /*# sourceMappingURL=style.css.map */

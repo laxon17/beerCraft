@@ -2,6 +2,11 @@
     :root {
         --cardHeight: 280px;
     }
+    html {
+        .pt {
+            padding-top: 0 !important;
+        }
+    }
 }
 
 @media screen and (max-width: 1220px) {
@@ -35,6 +40,9 @@
     #second-banner {
         flex-direction: column-reverse !important;
     }
+    .container3 {
+        padding-top: 50px !important; 
+    }
 }
 
 @media screen and (max-width: 700px) {
@@ -57,6 +65,9 @@
             font-size: 2rem !important;
         }
     }
+    .container3 {
+        padding-top: 30px !important; 
+    }
 }
 
 @media screen and (max-width: 405px) {
@@ -68,5 +79,8 @@
         .intro-text2 {
             font-size: 1.5rem !important;
         }
+    }
+    .container3 {
+        padding-top: 30px !important; 
     }
 }

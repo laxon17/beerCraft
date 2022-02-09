@@ -9,7 +9,7 @@
             res = await fetch(`./assets/data/${fileName}.json`)
             return res.json()
         } catch (error) {
-            console.log(error)
+            console.error(error)
         }
     }
 
@@ -22,7 +22,7 @@
 // END OF LOAD ALL JSONS IN LOCAL STORAGE
 
 // SHOP PAGE
-    if(window.location.pathname === '/worldCraft/shop.html') shopPage()
+    if(window.location.pathname === '/shop.html') shopPage()
 
     function shopPage() {
         loadBeers(beers)
@@ -254,9 +254,9 @@
         let imgSource = targetBeer.firstElementChild.firstElementChild.getAttribute('src')
 
         if(!checkRepeat(theName)) {
-            M.toast({html: 'Beer already added to favorites!'})
+            M.toast({html: 'Beer is already in favorites!'})
         } else {
-            M.toast({html: 'Added to favorites!'})
+            M.toast({html: 'Beer added to favorites!'})
             beerInfo.push(imgSource, theName)
             Favorites.addFavorite(beerInfo)
             Favorites.displayFavorites()
@@ -388,7 +388,6 @@
         updateCartTotal()
     }
     
-
     function addToCart(clickedBeer) {
         let targetBeer = clickedBeer.target.parentElement.parentElement
         let beerInfo = []
@@ -399,7 +398,7 @@
         let beerPrice = Number(beerPriceHolder.substring(2, beerPriceHolder.length)) 
 
         if(!checkItemRepeat(theName)) {
-            M.toast({html: 'Beer is already in the cart!'})
+            M.toast({html: 'Beer is already in cart!'})
         } else {
             M.toast({html: 'Beer added to cart!'})
             beerInfo.push(imgSource, theName, beerPrice)
@@ -422,21 +421,21 @@
         const cartContainer = document.getElementById('cart-container')
         let cartItem = ''
 
-        for(let item of itemsArray) {
+        for(let index in itemsArray) {
             cartItem += `
                     <li>
                         <div class="row">
                             <div class="col s8 offset-s2 offset-m2 offset-l2">
-                                <img src="${item[0]}" class="responsive-img" alt="Beer in cart" />
+                                <img src="${itemsArray[index][0]}" class="responsive-img" alt="Beer in cart" />
                             </div>
                         </div>
                         <div class="row valign-wrapper">
                             <div class="col s6 pt-1">
-                                <h6>${item[1]}</h6>
+                                <h6>${itemsArray[index][1]}</h6>
                             </div>
                             <div class="col s4">
-                                <div class="input-field">
-                                    <input type="number" value="1" name="beerQuantity" />
+                                <div data-input="quantity">
+                                    <input type="number" name="beerQuantity" value="1" />
                                 </div>
                             </div>
                             <div class="col s2 pt-1">
@@ -449,11 +448,11 @@
         }
         
         cartContainer.innerHTML = (cartItem) ? cartItem + addRemoveCheck(cartItem) : 'Your cart is empty!'
-        
+
+        document.getElementById('clearCart').addEventListener('click', emptyCart)
         document.querySelectorAll('.remove-cart-item').forEach(removeBtn => {
             removeBtn.addEventListener('click', removeFromCart)
         })
-        document.getElementById('clearCart').addEventListener('click', emptyCart)
         document.querySelectorAll('input[name="beerQuantity"]').forEach(quantity => {
             quantity.addEventListener('change', quantityChanged)
         })
@@ -527,7 +526,6 @@
     }
 
     document.addEventListener('DOMContentLoaded', Cart.displayCartItems)
-
 // END OF SHOPPING CART
 
 // FETCH AND CREATE NAVIGATION LINKS
