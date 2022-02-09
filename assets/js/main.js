@@ -22,7 +22,7 @@
 // END OF LOAD ALL JSONS IN LOCAL STORAGE
 
 // SHOP PAGE
-    if(window.location.pathname === '/shop.html') shopPage()
+    if(window.location.pathname === '/worldCraft/shop.html') shopPage()
 
     function shopPage() {
         loadBeers(beers)
