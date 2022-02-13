@@ -538,5 +538,95 @@
             "alternative": "New Belgium Dayblazer"
         },
         "beerDescription": "A deliciously refreshing golden ale, at 4.8% ABV, brewed with the finest malts and hops giving a sweet crisp citrus finish with just a hint of honey."
+    },
+    {
+        "id": 31,
+        "beerName": "Ayahuasca",
+        "brewery": 3,
+        "price": 2.75,
+        "alcoholPercentage": {
+            "percentage": 6,
+            "percentageRange": 1
+        },
+        "types": [
+            9
+        ],
+        "beerCover": {
+            "location": "ayahuasca.png",
+            "alternative": "Ayahuasca"
+        },
+        "beerDescription": "Liana which heals and purifies the mind and body and has transcendental powers. Inspired by Ayahuasca, our brewing shamans made Jungle Ale and added a fruit that carries a pleasant bitterness and strong aroma. The magical ingredient of our Ayahuasca are powerful juniper seeds whose astringency we have soothed with a little orange peel added to the whirlpool."
+    },
+    {
+        "id": 32,
+        "beerName": "Flying Dogma",
+        "brewery": 3,
+        "price": 3,
+        "alcoholPercentage": {
+            "percentage": 6.6,
+            "percentageRange": 1
+        },
+        "types": [
+            7
+        ],
+        "beerCover": {
+            "location": "flying-dogma.png",
+            "alternative": "Flying Dogma"
+        },
+        "beerDescription": "FLYING DOGMA is the first Serbian-American kraft collaboration and the fulfillment of our dreams! Our guest at the time was Matt Brophy, the main brewer of the legendary American Flying Dog brewery from Maryland, and with the use of hops that had not been used in Serbia until then, the powerful Galaxy, we created a balanced and dry IPA fantastic aroma. Although Matt did not keep us company during this cooking, he was happy that we are reviving the magic from almost two years ago!"
+    },
+    {
+        "id": 33,
+        "beerName": "Hazy Rocket",
+        "brewery": 3,
+        "price": 2.25,
+        "alcoholPercentage": {
+            "percentage": 6.4,
+            "percentageRange": 1
+        },
+        "types": [
+            7
+        ],
+        "beerCover": {
+            "location": "hazy-rocket.png",
+            "alternative": "Hazy Rocket"
+        },
+        "beerDescription": "Golden yellow and cloudy beer from which the palate explodes, and then the aromas of tropical fruits and oranges die from it! A special strain of yeast, a large proportion of oats and wheat flakes with FOUR TIMES more hops than our most intoxicating beer!"
+    },
+    {
+        "id": 34,
+        "beerName": "Hollow Pumpkin",
+        "brewery": 3,
+        "price": 2.5,
+        "alcoholPercentage": {
+            "percentage": 6,
+            "percentageRange": 1
+        },
+        "types": [
+            1
+        ],
+        "beerCover": {
+            "location": "hollow-pumpkin.png",
+            "alternative": "Hollow Pumpkin"
+        },
+        "beerDescription": "Hollow Pumpkin is a pumpkin ale that seduces with the fine scents of cloves and cinnamon, less bitterness, fuller taste and 6% alcohol! It is a special, limited, seasonal beer, and if you do not try it these days, you will have to wait until next fall."
+    },
+    {
+        "id": 35,
+        "beerName": "Juice UP",
+        "brewery": 3,
+        "price": 2.79,
+        "alcoholPercentage": {
+            "percentage": 8.5,
+            "percentageRange": 2
+        },
+        "types": [
+            7
+        ],
+        "beerCover": {
+            "location": "juice-up.png",
+            "alternative": "Juice It Up"
+        },
+        "beerDescription": "What can we learn about him from the name? That a glass of this beer is a crazy party of tropical fruits and citrus. And it is! That tropical aromas are obtained by double dry hops - please! That the beer is soft to the touch and strong in taste. Hops: Citra Incognito, Galaxy, Citra and El dorado. Malt: barley, wheat and oats."
     }
 ]
