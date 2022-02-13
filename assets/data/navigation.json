@@ -1,18 +1,18 @@
 [
     {
         "value": "Home",
-        "location": "/"
+        "location": "/worldCraft/"
     },
     {
         "value": "Shop",
-        "location": "/shop.html"
+        "location": "/worldCraft/shop.html"
     },
     {
         "value": "About",
-        "location": "/about.html"
+        "location": "/worldCraft/about.html"
     },
     {
         "value": "Author",
-        "location": "/author.html"
+        "location": "/worldCraft/author.html"
     }
 ]
