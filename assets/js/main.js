@@ -23,6 +23,7 @@
 
 // SHOP PAGE
     if(window.location.pathname === '/worldCraft/shop.html') shopPage()
+    if(window.location.pathname === '/worldCraft/about.html') contactValidation()
 
     function shopPage() {
         loadBeers(beers)
@@ -220,7 +221,7 @@
             }
         }
         
-        // // LISTEN IF A FILTER IS SELECTED, AND ENABLE FILTER CLEAR BTN
+        // LISTEN IF A FILTER IS SELECTED, AND ENABLE FILTER CLEAR BTN
         
         function clearAllFilters() {
             document.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
@@ -450,6 +451,8 @@
         cartContainer.innerHTML = (cartItem) ? cartItem + addRemoveCheck(cartItem) : 'Your cart is empty!'
 
         document.getElementById('clearCart').addEventListener('click', emptyCart)
+        document.getElementById('checkout').addEventListener('click', redirectToContact)
+
         document.querySelectorAll('.remove-cart-item').forEach(removeBtn => {
             removeBtn.addEventListener('click', removeFromCart)
         })
@@ -457,6 +460,13 @@
             quantity.addEventListener('change', quantityChanged)
         })
     }  
+
+    function redirectToContact() {
+        window.location.href = "./about.html#contact"
+
+        localStorage.removeItem('cartItems')
+        updateCartTotal()
+    }
 
     function emptyCart() {
         localStorage.removeItem('cartItems')
@@ -476,7 +486,7 @@
             <li>
                 <div class="row">
                     <div class="col s6">
-                        <a class="btn btn-medium orange" id="checkout">Checkout</a>
+                        <a class="btn btn-medium orange" id="checkout" href="#modal1">Checkout</a>
                     </div>
                     <div class="col s6">
                         <a class="btn btn-medium orange" id="clearCart">Clear cart</a>
@@ -528,6 +538,158 @@
     document.addEventListener('DOMContentLoaded', Cart.displayCartItems)
 // END OF SHOPPING CART
 
+
+// CONTACT VALIDATION FOR /ABOUT.HTML
+    function contactValidation() {
+        const nameField = document.getElementById('fullname')
+        const mailField = document.getElementById('email')
+        const textField = document.getElementById('textarea2')
+        const submitBtn = document.getElementById('contactSubmit')
+        const ageButton = document.querySelectorAll('input[type="radio"]')
+
+
+        document.getElementById('contactForm').addEventListener('submit', (event) => {
+            if(checkBtn()) {
+                event.preventDefault()
+                alert(`Thank you ${nameField.value} for contacting us! We will answer you shortly on ${mailField.value}. Best regards!`)
+                clearInputs()   
+            }
+            else {
+                event.preventDefault()
+                alert('You must be at least 18 years old! Check your inputs!') 
+                checkName()
+                checkMail()
+                textAreaCheck()
+            }
+        })
+
+        function clearInputs() {
+            fieldNeutral(nameField)
+            fieldNeutral(mailField)
+            areaNeutral()
+            submitBtn.className = 'btn btn-large red waves-effect waves-light'
+            document.querySelector('input[value="0" type="radio"]').checked = true
+        }
+
+        function checkBtn() {
+            if(textAreaCheck() && checkName() && checkMail() && checkAge()) {
+                if(submitBtn.classList.contains('red')) {
+                    submitBtn.classList.remove('red')
+                    submitBtn.classList.add('teal')
+                } else {
+                    submitBtn.classList.add('teal')
+                }
+                return 1 // Button is valid, and can submit the form
+            } else {
+                if(submitBtn.classList.contains('teal')) {
+                    submitBtn.classList.remove('teal')
+                    submitBtn.classList.add('red')
+                } else {
+                    submitBtn.classList.add('red')
+                }
+                return 0 // Button is not allowed to submit if any field isn't filled
+            }
+        }
+
+        function checkAge() {
+            let selectedAge = Number(document.querySelector('input[name="age"]:checked').value)
+                if(selectedAge) return 1
+                return 0        
+        }
+
+        function fieldNeutral(field) {
+            field.className = 'white-text'
+            field.value = ''
+            field.nextElementSibling.nextElementSibling.className = ''
+            field.nextElementSibling.nextElementSibling.innerHTML = ''
+        } 
+
+        function areaNeutral() {
+            textField.className = 'textarea fieldInput'
+            textField.value = ''
+            textField.nextElementSibling.nextElementSibling.className = ''
+            textField.nextElementSibling.nextElementSibling.innerHTML = ''
+        }
+
+        function fieldValid(field) {
+            if(field.classList.contains('fail')) {
+                field.classList.remove('fail')
+                field.classList.add('pass')
+                field.nextElementSibling.nextElementSibling.classList.remove('red-text')
+                field.nextElementSibling.nextElementSibling.classList.add('teal-text')
+            } else {
+                field.classList.add('pass')
+            }
+            field.nextElementSibling.nextElementSibling.innerHTML = `&check;`
+            field.nextElementSibling.nextElementSibling.classList.add('teal-text')
+            
+        }
+
+        function fieldInvalid(field, text) {
+            if(field.classList.contains('pass')) {
+                field.classList.remove('pass')
+                field.classList.add('fail')
+                field.nextElementSibling.nextElementSibling.classList.remove('teal-text')
+                field.nextElementSibling.nextElementSibling.classList.add('red-text')    
+            } else {
+                field.classList.add('fail')
+            }
+            field.nextElementSibling.nextElementSibling.innerText = `${text}`
+            field.nextElementSibling.nextElementSibling.classList.add('red-text')
+        }
+
+        function checkName() {
+            const nameExpression = /^[A-ZČĆŽĐŠ][a-zćčžđš]{1,14}\s([A-ZČĆŽĐŠ][a-zćčžđš]{1,14})?\s?[A-ZČĆŽŠĐ][a-zćčžđš]{1,19}$/
+            let nameFieldValue = nameField.value
+                return checkRegEx(nameExpression, nameFieldValue, nameField)
+        }
+
+        function checkMail() {
+            const mailExpression = /^[a-zA-Z0-9]([a-z]|[0-9])+\.?-?_?([a-z]|[0-9])*\.?([a-z]|[0-9])*\@[a-z]{3,}\.([a-z]{2,4}\.)?([a-z]{2,4})$/g
+            let mailFieldValue = mailField.value 
+                return checkRegEx(mailExpression, mailFieldValue, mailField) 
+        }
+
+        function checkRegEx(expression, fieldValue, field) {
+            if(expression.test(String(fieldValue))) {
+                fieldValid(field)
+                return 1 // Is valid, return 1
+            } else {
+                fieldInvalid(field, `${field.name} is not as expected!`)
+                return 0 // It isn't as expected, return 0
+            } 
+        }
+
+        function textAreaCheck() {
+            if((textField.value.length > 0) && (textField.value.length < 500)) {
+                fieldValid(textField)
+                return 1
+            } else {
+                fieldInvalid(textField, 'Message must be between 0-500 characters!')
+                return 0
+            }
+        }
+
+        nameField.addEventListener('keyup', checkName)
+        mailField.addEventListener('keyup', checkMail)
+        textField.addEventListener('keyup', textAreaCheck)
+        ageButton.forEach(button => {
+            button.addEventListener('change', checkAge)
+        })
+
+        nameField.addEventListener('blur', checkName)
+        mailField.addEventListener('blur', checkMail)
+        textField.addEventListener('blur', textAreaCheck)
+
+        nameField.addEventListener('keyup', checkBtn)
+        mailField.addEventListener('keyup', checkBtn)
+        textField.addEventListener('keyup', checkBtn)
+        ageButton.forEach(button => {
+            button.addEventListener('change', checkBtn)
+        })
+    }
+// END OF CONTACT VALIDATION FOR /ABOUT.HTML
+
 // FETCH AND CREATE NAVIGATION LINKS
     function loadNavigation() {    
         const visibleList = document.getElementById('visible-links')
@@ -578,6 +740,8 @@
             },3000)
         })
     }
+
+    pageLoad()
 // END OF LOADING SCREEN FADEOUT
 
 // SCROLL TO TOP BUTTON
@@ -609,6 +773,7 @@
         loadNavigation()
         scrollToTopBtn()
         AOS.init()
+        $('.modal').modal()
         $('.sidenav').sidenav()
         $('.sidenav2').sidenav({
             edge: 'right'

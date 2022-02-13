@@ -182,7 +182,7 @@ html body main .container2 {
 }
 
 html body main .container3 {
-  height: 80vh !important;
+  height: 730px !important;
   padding-top: 70px;
 }
 
@@ -230,6 +230,14 @@ html body main input[type="checkbox"]:checked + span:not(.lever):before {
   border-bottom: 2px solid orange;
 }
 
+html body main .fail {
+  border-bottom-color: red !important;
+}
+
+html body main .pass {
+  border-bottom-color: teal !important;
+}
+
 html body main .product-image {
   height: var(--cardHeight);
 }
@@ -271,13 +279,6 @@ html body main .pass {
 
 html body main label {
   font-size: 16px !important;
-}
-
-html body main label::after {
-  margin-left: 7px;
-  content: attr(data-important);
-  color: red;
-  font-size: 1.3rem;
 }
 
 html body footer {

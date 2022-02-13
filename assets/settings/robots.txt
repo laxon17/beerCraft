@@ -1,0 +1,6 @@
+User-agent: *
+
+Disallow: /worldCraft/private
+Disallow: /worldCraft/admin
+
+Sitemap: https://laxon17.github.io/worldCraft/assets/settings/sitemap.xml

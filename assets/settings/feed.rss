@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+    <channel>
+        <title>worldCraft</title>
+        <link>https://laxon17.github.io/worldCraft/index.html</link>
+        <description>News</description>
+            <item>
+                <title>Craft weekend!</title>
+                <link>https://laxon17.github.io/worldCraft/shop.html</link>
+                <description>We have a special discount on all Dogma beers. Check It out!</description>
+            </item>
+            <item>
+                <title>Brewers on our podcast!</title>
+                <link>https://laxon17.github.io/worldCraft/about.html</link>
+                <description>Brewers talking about secrets in craft industry!</description>
+            </item>
+            <item>
+                <title>Craft with us!</title>
+                <link>https://laxon17.github.io/worldCraft/about.html</link>
+                <description>HOP in and learn these essential skills for beer crafting!</description>
+            </item>
+    </channel>
+</rss>

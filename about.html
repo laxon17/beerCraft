@@ -21,9 +21,9 @@
 
     <body>
     <!-- DOM Loading animation -->
-        <!-- <div class="loader">
+        <div class="loader">
             <img src="./assets/img/beer-load.gif" alt="Beer Loading" />
-        </div> -->
+        </div>
     <!-- End of DOM Loading animation -->
 
     <!-- Responsive navigation menu with custom logo -->
@@ -163,7 +163,7 @@
                         </p>
                     </div>
                 </div>
-                <section class="mb mt">
+                <section class="mb mt" id="contact">
                     <div class="row">
                         <div class="col s10 m8 l8 offset-s1 offset-m2 offset-l2 center-align flow-text">
                             <h4>Contact <span class="orange-text text-darken-2">us</span></h4>
@@ -174,63 +174,61 @@
             <div class="parallax-container container3">
                 <div class="parallax"><img src="./assets/img/guy-with-beer.jpg"></div>
                 <div id="second-banner" class="row">
-                    <div class="col s12 offset-m2 m8 l6 offset-l3t right-align" data-aos="fade-up-right">
+                    <div class="col s12 offset-m2 m8 l4 offset-l4 right-align" data-aos="fade-up-right">
                         <div class="form-wrapper center">
                             <h5 class="white-text">SEND US A MESSAGE</h5>
-                            <form>
+                            <form id="contactForm">
                                 <div class="row">
                                     <div class="col s6">
                                         <div class="input-field">
-                                            <input class="white-text" type="email" name="email" id="email">
+                                            <input class="white-text" type="email" name="E-mail" id="email" />
                                             <label for="email">E-mail</label>
+                                            <span class="helper-text left"></span>
                                         </div>
                                     </div>
                                     <div class="col s6">
                                         <div class="input-field">
-                                            <input class="white-text" type="text" name="fullname" id="fullname" />
-                                            <label for="fullname" data-important="*">Full Name</label>
+                                            <input class="white-text" type="text" name="Full name" id="fullname" />
+                                            <label for="fullname">Full Name</label>
+                                            <span class="helper-text left"></span>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col s12">
                                         <div class="input-field">
-                                            <textarea class="textarea fieldInput" name="textarea2" id="textarea2" data-length="450"></textarea>
+                                            <textarea class="textarea fieldInput" name="Message" id="textarea2" ></textarea>
                                             <label for="textarea2">Message</label>
+                                            <span class="left"></span>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <div class="col s6">
+                                    <div class="col s12">
                                         <div class="row"><p class="white-text small-text">Are you older than 18?</p></div>
                                         <div class="row">
-                                            <div class="col s6">
+                                            <div class="col s6 right-align">
                                                 <p>
                                                     <label>
-                                                        <input name="group1" type="radio" />
+                                                        <input name="age" value="1" type="radio" />
                                                         <span>Yes</span>
                                                     </label>
                                                 </p>
                                             </div>
-                                            <div class="col s6">
+                                            <div class="col s6 left-align">
                                                 <p>
                                                     <label>
-                                                        <input name="group1" type="radio" checked />
+                                                        <input name="age" value="0" type="radio" checked />
                                                         <span>No</span>
                                                     </label>
                                                 </p>
                                             </div>
                                         </div>         
                                     </div>
-                                    <div class="col s6">
-                                        <div class="input-field">
-                                            
-                                        </div>
-                                    </div>
                                 </div>
                                 <div class="row">
                                     <div class="col s12">
-                                        <button type="submit" class="btn btn-large orange waves-effect waves-light">SEND</button>
+                                        <button type="submit" id="contactSubmit" class="btn btn-large red waves-effect waves-light">SEND</button>
                                     </div>
                                 </div>
                             </form>
@@ -239,7 +237,7 @@
                 </div>
             </div>
             <section class="section section2">
-                <div class="col l12 `section2">
+                <div class="col l12 section2">
                     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2830.3335135524567!2d20.482502215535806!3d44.8147697790986!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x475a7a9609031735%3A0xc17ed71f59ac4725!2z0JLQuNGB0L7QutCwINCY0KbQoiDRiNC60L7Qu9Cw!5e0!3m2!1ssr!2srs!4v1644413524190!5m2!1ssr!2srs" allowfullscreen="false" loading="lazy"></iframe>
                 </div>  
             </section>
