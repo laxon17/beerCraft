@@ -21,10 +21,12 @@
     }
 // END OF LOAD ALL JSONS IN LOCAL STORAGE
 
-// SHOP PAGE
+// LOADING OF ESSENTIALS
     if(window.location.pathname === '/worldCraft/shop.html') shopPage()
     if(window.location.pathname === '/worldCraft/about.html') contactValidation()
+// END OF LOADING ESSENTIALS
 
+// SHOP PAGE
     function shopPage() {
         loadBeers(beers)
         loadFilters(breweries, 'brandFilter', 'beerBrand')
@@ -220,9 +222,7 @@
                 if(brandId === brewery.id) return brewery.title
             }
         }
-        
-        // LISTEN IF A FILTER IS SELECTED, AND ENABLE FILTER CLEAR BTN
-        
+                
         function clearAllFilters() {
             document.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
                 checkbox.checked = false
@@ -237,7 +237,7 @@
             if(!this.disabled) clearAllFilters()
         })
         
-        document.querySelectorAll('input').forEach(element => {
+        document.querySelectorAll('input:not(.quantity)').forEach(element => {
             const clearBtn = document.getElementById('clearFilters')
             element.addEventListener('change', () => {
                 if(clearBtn.disabled) clearBtn.disabled = false 
@@ -287,25 +287,24 @@
             `
         }
         
-        favoritesContainer.innerHTML = (favoriteBeer) ? favoriteBeer + addRemoveAll(favoriteBeer) : 'No favorites added yet!'
+        if(favoriteBeer) {
+            favoritesContainer.innerHTML = favoriteBeer
+            document.getElementById('removeAllFavorites').parentElement.className = 'show'
+        } else {
+            favoritesContainer.innerHTML = 'No favorites added yet!'
+            document.getElementById('removeAllFavorites').parentElement.className = 'hide'
+        }
         
         document.querySelectorAll('.remove-favorite').forEach(removeBtn => {
             removeBtn.addEventListener('click', removeFromFavorites)
         })
-        document.getElementById('removeAllFavorites').addEventListener('click', removeAllFavorites)
     }  
-
+    
+    document.getElementById('removeAllFavorites').addEventListener('click', removeAllFavorites)
+    
     function removeAllFavorites() {
         localStorage.removeItem('favorites')
         Favorites.displayFavorites()
-    }
-
-    function addRemoveAll(string) {
-        if(string) return `
-            <li>
-                <a class="btn btn-medium orange" id="removeAllFavorites">Remove all</a>
-            </li>
-        `
     }
 
     function removeFromFavorites(clickedBeer) {
@@ -334,6 +333,7 @@
             else {
                 favorites = JSON.parse(localStorage.getItem('favorites'))
             }
+            updateFavoritesInfo(favorites)
             return favorites
         }
 
@@ -362,6 +362,10 @@
         }
     }
 
+    function updateFavoritesInfo(items) {
+        document.getElementById('favorite-info').innerText = items.length
+    }
+
     document.addEventListener('DOMContentLoaded', Favorites.displayFavorites)
 // END OF FAVORITES
 
@@ -373,36 +377,50 @@
         let cartTotal = 0
 
         cartItems.forEach((item, index) => {
-            cartTotal += item[2] * beerQuantity[index].value
+            cartTotal += item[2] * item[3]
         })
 
-        cartTotal = Math.round(cartTotal * 100) / 100
+        cartTotal = Math.abs(Math.round(cartTotal * 100) / 100)
 
         totalContainer.innerHTML = cartTotal ? ` - &euro;${cartTotal}` : ``
     }
 
-    function quantityChanged(event) {
-        let quantityInput = event.target
-        if(isNaN(quantityInput.value) || quantityInput.value <= 0) {
-            quantityInput.value = 1
+    function quantityChanged(target) {
+        let quantityInput = target
+        let beer = quantityInput.parentElement.parentElement.firstElementChild.innerText
+        let beerQuantity = target.value
+        let cartItems = Cart.getCartItems()
+        let targetArray = cartItems.filter(item => item.includes(beer))
+
+        if(beerQuantity < 1 || isNaN(beerQuantity)) {
+            target.value = 1
+            beerQuantity = 1
         }
+
+        for(let index in cartItems) {
+            if(cartItems[index][1] === targetArray[0][1]) {
+                cartItems[index][3] = Number(beerQuantity)
+            }
+        }
+        localStorage.setItem('cartItems', JSON.stringify(cartItems))
+        displayReceiptItems(cartItems)
         updateCartTotal()
     }
-    
+
     function addToCart(clickedBeer) {
-        let targetBeer = clickedBeer.target.parentElement.parentElement
         let beerInfo = []
+        let targetBeer = clickedBeer.target.parentElement.parentElement
         let beerNameHolder = targetBeer.children[1].children[0].innerHTML
         let theName = beerNameHolder.substring(0, beerNameHolder.indexOf('<'))
         let imgSource = targetBeer.children[0].children[0].getAttribute('src')
-        let beerPriceHolder = targetBeer.children[1].children[4].textContent
-        let beerPrice = Number(beerPriceHolder.substring(2, beerPriceHolder.length)) 
+        let actualPrice = targetBeer.children[1].children[4].textContent
+        let beerPrice = Number(actualPrice.substring(2, actualPrice.length)) 
 
         if(!checkItemRepeat(theName)) {
             M.toast({html: 'Beer is already in cart!'})
         } else {
             M.toast({html: 'Beer added to cart!'})
-            beerInfo.push(imgSource, theName, beerPrice)
+            beerInfo.push(imgSource, theName, beerPrice, 1)
             Cart.addCartItems(beerInfo)
             Cart.displayCartItems()
         }
@@ -434,10 +452,8 @@
                             <div class="col s6 pt-1">
                                 <h6>${itemsArray[index][1]}</h6>
                             </div>
-                            <div class="col s4">
-                                <div data-input="quantity">
-                                    <input type="number" name="beerQuantity" value="1" />
-                                </div>
+                            <div class="col s4 pt-1">
+                                <input type="number" class="quantity" value="${itemsArray[index][3]}" name="beerQuantity" onchange="quantityChanged(this)" />
                             </div>
                             <div class="col s2 pt-1">
                                 <a class="remove-cart-item"><i class="orange-text material-icons">close</i></a>
@@ -447,26 +463,23 @@
                     <li><div class="divider"></div></li>
             `
         }
-        
-        cartContainer.innerHTML = (cartItem) ? cartItem + addRemoveCheck(cartItem) : 'Your cart is empty!'
 
-        document.getElementById('clearCart').addEventListener('click', emptyCart)
-        document.getElementById('checkout').addEventListener('click', redirectToContact)
+        if(cartItem) {
+            cartContainer.innerHTML = cartItem
+            document.getElementById('clearCart').parentElement.parentElement.parentElement.className = 'show'
+        } else {
+            cartContainer.innerHTML = 'Your cart is empty!'
+            document.getElementById('clearCart').parentElement.parentElement.parentElement.className = 'hide'
+        }
 
         document.querySelectorAll('.remove-cart-item').forEach(removeBtn => {
             removeBtn.addEventListener('click', removeFromCart)
         })
-        document.querySelectorAll('input[name="beerQuantity"]').forEach(quantity => {
-            quantity.addEventListener('change', quantityChanged)
-        })
+
+        displayReceiptItems(itemsArray)
     }  
-
-    function redirectToContact() {
-        window.location.href = "./about.html#contact"
-
-        localStorage.removeItem('cartItems')
-        updateCartTotal()
-    }
+    
+    document.getElementById('clearCart').addEventListener('click', emptyCart)
 
     function emptyCart() {
         localStorage.removeItem('cartItems')
@@ -481,21 +494,6 @@
         Cart.removeCartItem(targetName)
     }
 
-    function addRemoveCheck(string) {
-        if(string) return `
-            <li>
-                <div class="row">
-                    <div class="col s6">
-                        <a class="btn btn-medium orange" id="checkout" href="#modal1">Checkout</a>
-                    </div>
-                    <div class="col s6">
-                        <a class="btn btn-medium orange" id="clearCart">Clear cart</a>
-                    </div>
-                </div>
-            </li>
-        `
-    }
-
     class  Cart {
         static getCartItems() {
             let cartItems = localStorage.getItem('cartItems')
@@ -505,6 +503,7 @@
             else {
                 cartItems = JSON.parse(localStorage.getItem('cartItems'))
             }
+            updateCartInfo(cartItems)
             return cartItems
         }
 
@@ -535,81 +534,104 @@
         }
     }
 
+    function updateCartInfo(items) {
+        document.getElementById('cart-info').innerText = items.length
+    }
+
     document.addEventListener('DOMContentLoaded', Cart.displayCartItems)
 // END OF SHOPPING CART
 
+// CREATING RECEIPT 
+    function displayReceiptItems(items) {
+        const totalReceipt = document.getElementById('totalReceipt')
+        const receiptItemsContainer = document.getElementById('receipt-items')
+        let totalReceiptSum = 0
+        let receiptItem = ''
 
-// CONTACT VALIDATION FOR /ABOUT.HTML
-    function contactValidation() {
-        const nameField = document.getElementById('fullname')
-        const mailField = document.getElementById('email')
-        const textField = document.getElementById('textarea2')
-        const submitBtn = document.getElementById('contactSubmit')
-        const ageButton = document.querySelectorAll('input[type="radio"]')
+        for(let indeks in items) {
+            totalReceiptSum += items[indeks][2] * items[indeks][3]
+            receiptItem += `
+                <tr>
+                    <td>${Number(indeks) + 1}</td>
+                    <td>${items[indeks][1]}</td>
+                    <td>${items[indeks][3]}</td>
+                    <td>${items[indeks][2]}</td>
+                    <td>${(items[indeks][2] * items[indeks][3]).toFixed(2)}</td>
+                </tr>
+            `
+        }
+        receiptItemsContainer.innerHTML = receiptItem
+        totalReceipt.textContent = totalReceiptSum.toFixed(2)
+    }
+// END OF CREATING RECEIPT
 
+// VALIDATION METHODS FOR /ABOUT.HTML AND DELIVERY FORM (GLOBALS)
+    // DELIVERY FORM VALIDATION
+        const nameExpression = /^[A-ZČĆŽĐŠ][a-zćčžđš]{1,14}\s([A-ZČĆŽĐŠ][a-zćčžđš]{1,14})?\s?[A-ZČĆŽŠĐ][a-zćčžđš]{1,19}$/
+        const streetAddressExpression = /^[A-Za-zČĆŽĐŠčćžđš'\.\-\s\,0-9]{3,}$/
+        const postalCodeExpression = /^[0-9]{5}$/
+        const contactPhoneExpression = /^\+?[0-9]{11,12}$/
 
-        document.getElementById('contactForm').addEventListener('submit', (event) => {
-            if(checkBtn()) {
+        const deliveryName = document.getElementById('customerName')
+        const deliveryAddress = document.getElementById('address')
+        const deliveryPostalCode = document.getElementById('postalCode')
+        const deliveryPhone = document.getElementById('phoneNumber')
+        const deliveryButton = document.getElementById('deliveryBtn')
+        const deliveryForm = document.getElementById('deliveryForm')
+
+        deliveryForm.addEventListener('submit', (event) => {
+            if(checkBtn(deliveryBtn, 'deliveryBtn')) {
                 event.preventDefault()
-                alert(`Thank you ${nameField.value} for contacting us! We will answer you shortly on ${mailField.value}. Best regards!`)
-                clearInputs()   
-            }
-            else {
+                alert(`Thank you ${deliveryName.value} for ordering our beers! Our couriers will contact you on ${deliveryPhone.value}, when they arrive at ${deliveryAddress.value}. Best regards!`)
+                clearDeliveryFields()
+                emptyCart()
+            } else {
                 event.preventDefault()
-                alert('You must be at least 18 years old! Check your inputs!') 
-                checkName()
-                checkMail()
-                textAreaCheck()
+                alert('Looks like you forgot something to fill. Check your fields!') 
+                checkField(deliveryName, nameExpression)
+                checkField(deliveryAddress, streetAddressExpression)
+                checkField(deliveryPostalCode, postalCodeExpression)
+                checkField(deliveryPhone, contactPhoneExpression)
             }
         })
 
-        function clearInputs() {
-            fieldNeutral(nameField)
-            fieldNeutral(mailField)
-            areaNeutral()
-            submitBtn.className = 'btn btn-large red waves-effect waves-light'
-            document.querySelector('input[value="0" type="radio"]').checked = true
+        function deliveryBtn() {
+            if(checkField(deliveryName, nameExpression) && checkField(deliveryAddress, streetAddressExpression) && checkField(deliveryPostalCode, postalCodeExpression) && checkField(deliveryPhone, contactPhoneExpression)) return 1
+            return 0
         }
 
-        function checkBtn() {
-            if(textAreaCheck() && checkName() && checkMail() && checkAge()) {
-                if(submitBtn.classList.contains('red')) {
-                    submitBtn.classList.remove('red')
-                    submitBtn.classList.add('teal')
-                } else {
-                    submitBtn.classList.add('teal')
-                }
-                return 1 // Button is valid, and can submit the form
-            } else {
-                if(submitBtn.classList.contains('teal')) {
-                    submitBtn.classList.remove('teal')
-                    submitBtn.classList.add('red')
-                } else {
-                    submitBtn.classList.add('red')
-                }
-                return 0 // Button is not allowed to submit if any field isn't filled
-            }
+        function clearDeliveryFields() {
+            fieldNeutral(deliveryName)
+            fieldNeutral(deliveryAddress)
+            fieldNeutral(deliveryPostalCode)
+            fieldNeutral(deliveryPhone)
+            deliveryButton.className = 'btn btn-large red center waves-effect waves-light'
         }
 
-        function checkAge() {
-            let selectedAge = Number(document.querySelector('input[name="age"]:checked').value)
-                if(selectedAge) return 1
-                return 0        
-        }
+        addListenerForField(deliveryName, nameExpression, 'keyup')
+        addListenerForField(deliveryName, nameExpression, 'blur')
+        addListenerForButton(deliveryName, deliveryBtn, 'deliveryBtn', 'keyup')
 
+        addListenerForField(deliveryAddress, streetAddressExpression, 'keyup')
+        addListenerForField(deliveryAddress, streetAddressExpression, 'blur')
+        addListenerForButton(deliveryAddress, deliveryBtn, 'deliveryBtn', 'keyup')
+
+        addListenerForField(deliveryPostalCode, postalCodeExpression, 'keyup')
+        addListenerForField(deliveryPostalCode, postalCodeExpression, 'blur')
+        addListenerForButton(deliveryPostalCode, deliveryBtn, 'deliveryBtn', 'keyup')
+
+        addListenerForField(deliveryPhone, contactPhoneExpression, 'keyup')
+        addListenerForField(deliveryPhone, contactPhoneExpression, 'blur')
+        addListenerForButton(deliveryPhone, deliveryBtn, 'deliveryBtn', 'keyup')
+    // END OF DELIVERY FORM VALIDATION 
+
+    // FUNCTIONS FOR ALL FORM VALIDATIONS
         function fieldNeutral(field) {
             field.className = 'white-text'
             field.value = ''
             field.nextElementSibling.nextElementSibling.className = ''
             field.nextElementSibling.nextElementSibling.innerHTML = ''
         } 
-
-        function areaNeutral() {
-            textField.className = 'textarea fieldInput'
-            textField.value = ''
-            textField.nextElementSibling.nextElementSibling.className = ''
-            textField.nextElementSibling.nextElementSibling.innerHTML = ''
-        }
 
         function fieldValid(field) {
             if(field.classList.contains('fail')) {
@@ -622,7 +644,6 @@
             }
             field.nextElementSibling.nextElementSibling.innerHTML = `&check;`
             field.nextElementSibling.nextElementSibling.classList.add('teal-text')
-            
         }
 
         function fieldInvalid(field, text) {
@@ -638,16 +659,9 @@
             field.nextElementSibling.nextElementSibling.classList.add('red-text')
         }
 
-        function checkName() {
-            const nameExpression = /^[A-ZČĆŽĐŠ][a-zćčžđš]{1,14}\s([A-ZČĆŽĐŠ][a-zćčžđš]{1,14})?\s?[A-ZČĆŽŠĐ][a-zćčžđš]{1,19}$/
-            let nameFieldValue = nameField.value
-                return checkRegEx(nameExpression, nameFieldValue, nameField)
-        }
-
-        function checkMail() {
-            const mailExpression = /^[a-zA-Z0-9]([a-z]|[0-9])+\.?-?_?([a-z]|[0-9])*\.?([a-z]|[0-9])*\@[a-z]{3,}\.([a-z]{2,4}\.)?([a-z]{2,4})$/g
-            let mailFieldValue = mailField.value 
-                return checkRegEx(mailExpression, mailFieldValue, mailField) 
+        function checkField(field, expression) {
+            let fieldValue = field.value 
+            return checkRegEx(expression, fieldValue, field) 
         }
 
         function checkRegEx(expression, fieldValue, field) {
@@ -660,6 +674,121 @@
             } 
         }
 
+        function checkBtn(callback, buttonId) {
+            let button = document.getElementById(buttonId)
+            if(callback()) {
+                if(button.classList.contains('red')) {
+                    button.classList.remove('red')
+                    button.classList.add('teal')
+                } else {
+                    button.classList.add('teal')
+                }
+                return 1 // Button is valid, and can submit the form
+            } else {
+                if(button.classList.contains('teal')) {
+                    button.classList.remove('teal')
+                    button.classList.add('red')
+                } else {
+                    button.classList.add('red')
+                }
+                return 0 // Button is not allowed to submit if any field isn't filled
+            }
+        }
+
+        function addListenerForField(field, expression, event) {
+            field.addEventListener(event, () => {
+                checkField(field, expression)
+            })
+        }
+
+        function addListenerForButton(field, callback, buttonId, event) {
+            field.addEventListener(event, () => {
+                checkBtn(callback, buttonId)
+            })
+        }
+    // END OF FUNCTIONS FOR ALL FORM VALIDATIONS
+// END OF VALIDATION METHODS FOR /ABOUT.HTML AND DELIVERY FORM (GLOBALS)
+
+
+// CONTACT VALIDATION FOR /ABOUT.HTML
+    function contactValidation() {
+        const nameExpression = /^[A-ZČĆŽĐŠ][a-zćčžđš]{1,14}\s([A-ZČĆŽĐŠ][a-zćčžđš]{1,14})?\s?[A-ZČĆŽŠĐ][a-zćčžđš]{1,19}$/
+        const mailExpression = /^[a-zA-Z0-9]([a-z]|[0-9])+\.?-?_?([a-z]|[0-9])*\.?([a-z]|[0-9])*\@[a-z]{3,}\.([a-z]{2,4}\.)?([a-z]{2,4})$/
+        
+        const nameField = document.getElementById('fullname')
+        const mailField = document.getElementById('email')
+        const textField = document.getElementById('textarea2')
+        const ageButton = document.querySelectorAll('input[type="radio"]')
+        const submitBtn = document.getElementById('contactSubmit')
+
+
+        document.getElementById('contactForm').addEventListener('submit', (event) => {
+            if(checkBtn(contactButton, 'contactSubmit')) {
+                event.preventDefault()
+                alert(`Thank you ${nameField.value} for contacting us! We will answer you shortly on ${mailField.value}. Best regards!`)
+                clearInputs()   
+            }
+            else {
+                event.preventDefault()
+                alert('You must be at least 18 years old! Check your inputs!') 
+                checkField(nameField, nameExpression)
+                checkField(mailField, mailExpression)
+                textAreaCheck()
+            }
+        })
+
+        addListenerForField(nameField, nameExpression, 'keyup')
+        addListenerForField(nameField, nameExpression, 'blur')
+        addListenerForButton(nameField, contactButton, 'contactSubmit', 'keyup')
+
+        addListenerForField(mailField, mailExpression, 'keyup')
+        addListenerForField(mailField, mailExpression, 'blur')
+        addListenerForButton(mailField, contactButton, 'contactSubmit', 'keyup')
+
+        textField.addEventListener('keyup', textAreaCheck)
+        textField.addEventListener('blur', textAreaCheck)
+        textField.addEventListener('keyup', () => {
+            checkBtn(contactButton, 'contactSubmit')
+        })
+
+        ageButton.forEach(button => {
+            button.addEventListener('change', checkAge)
+        })
+
+        ageButton.forEach(button => {
+            button.addEventListener('change', () => {
+                checkBtn(contactButton, 'contactSubmit')
+            })
+        })
+    
+
+        function clearInputs() {
+            fieldNeutral(nameField)
+            fieldNeutral(mailField)
+            areaNeutral()
+            submitBtn.className = 'btn btn-large red waves-effect waves-light'
+            document.querySelector('input[type="radio"]:checked').checked = false
+            document.querySelector('#noteight').checked = true
+        }
+
+        function contactButton() {
+            if(textAreaCheck() && checkField(nameField, nameExpression) && checkField(mailField, mailExpression) && checkAge()) return 1
+            return 0
+        }
+
+        function checkAge() {
+            let selectedAge = Number(document.querySelector('input[name="age"]:checked').value)
+                if(selectedAge) return 1
+                return 0        
+        }
+
+        function areaNeutral() {
+            textField.className = 'textarea fieldInput'
+            textField.value = ''
+            textField.nextElementSibling.nextElementSibling.className = ''
+            textField.nextElementSibling.nextElementSibling.innerHTML = ''
+        }
+
         function textAreaCheck() {
             if((textField.value.length > 0) && (textField.value.length < 500)) {
                 fieldValid(textField)
@@ -669,24 +798,6 @@
                 return 0
             }
         }
-
-        nameField.addEventListener('keyup', checkName)
-        mailField.addEventListener('keyup', checkMail)
-        textField.addEventListener('keyup', textAreaCheck)
-        ageButton.forEach(button => {
-            button.addEventListener('change', checkAge)
-        })
-
-        nameField.addEventListener('blur', checkName)
-        mailField.addEventListener('blur', checkMail)
-        textField.addEventListener('blur', textAreaCheck)
-
-        nameField.addEventListener('keyup', checkBtn)
-        mailField.addEventListener('keyup', checkBtn)
-        textField.addEventListener('keyup', checkBtn)
-        ageButton.forEach(button => {
-            button.addEventListener('change', checkBtn)
-        })
     }
 // END OF CONTACT VALIDATION FOR /ABOUT.HTML
 

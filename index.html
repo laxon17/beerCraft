@@ -39,10 +39,12 @@
                             <!-- Content inserted from navigation.json -->
                         </ul>
                         <ul class="right">  
-                            <li>
+                            <li class="options">
+                                <div id="cart-info" class="quantity-info-status">0</div>
                                 <i data-target="cart-tab" class="sidenav-trigger material-icons white-text">shopping_cart</i>
                             </li>
-                            <li>
+                            <li class="options">
+                                <div id="favorite-info" class="quantity-info-status">0</div>
                                 <i data-target="fav-tab" class="sidenav-trigger material-icons white-text">favorite</i>
                             </li>
                         </ul>
@@ -65,6 +67,9 @@
                     <ul id="favorites-container" class="pl-1 pt-1">
                         
                     </ul>
+                    <li class="hide">
+                        <a class="btn btn-medium orange" id="removeAllFavorites">Remove all</a>
+                    </li>
                 </ul>    
              <!-- End of favorites -->
 
@@ -75,6 +80,16 @@
                     <ul id="cart-container" class="pl-1 pt-1">
                         
                     </ul>
+                    <li class="hide">
+                        <div class="row">
+                            <div class="col s6">
+                                <a class="btn btn-medium orange modal-trigger" id="checkout" href="#modal1">Checkout</a>
+                            </div>
+                            <div class="col s6">
+                                <a class="btn btn-medium orange" id="clearCart">Clear cart</a>
+                            </div>
+                        </div>
+                    </li>
                 </ul>
             <!-- End of shopping cart -->
         <!-- End of Cart & Fav tabs -->
@@ -214,6 +229,61 @@
             </button>
         </div>
     <!-- End of back to top btn -->
+
+    <!-- Modal for receipt -->
+        <div id="modal1" class="modal modal-fixed-footer">
+            <div class="modal-content">
+                <h4>Your cart items:</h4>
+                <div class="divider"></div>
+                <div class="col s12 l6">
+                    <table class="responsive-table striped">
+                        <thead>
+                            <td>Id</td>
+                            <td>Name</td>
+                            <td>Quantity</td>
+                            <td>Price &euro;: <small>&#40;per unit&#41;</small></td>
+                            <td>Total &euro;</td>
+                        </thead>
+                        <tbody id="receipt-items">
+                            
+                        </tbody>
+                    </table>
+                    <div class="right size-1 pt-2 pr-3">
+                        Receipt = &euro; <u><span id="totalReceipt">0.0</span></u>
+                    </div>
+                </div>
+                <div class="col s12 l4 offset-l1 pt-3">
+                    <h5>Delivery info</h5>
+                    <form class="pt-3" id="deliveryForm">
+                        <div class="input-field mb-3">
+                            <input class="black-text quantity" placeholder="e.g. John Doe" type="text" name="Full name" id="customerName" />
+                            <label for="customerName">Full Name</label>
+                            <span class="helper-text left"></span>
+                        </div>
+                        <div class="input-field mb-3">
+                            <input class="black-text quantity" placeholder="e.g. Zdravka Celara 16" type="text" name="Address" id="address" />
+                            <label for="address">Address</label>
+                            <span class="helper-text left"></span>
+                        </div>
+                        <div class="input-field mb-3">
+                            <input class="black-text quantity" placeholder="e.g. xxxxx" type="number" name="Postal code" id="postalCode" />
+                            <label for="postalCode">Postal code</label>
+                            <span class="helper-text left"></span>
+                        </div>
+                        <div class="input-field mb-3">
+                            <input class="black-text quantity" placeholder="e.g. +xxx xx xxx xx xx" type="text" name="Phone number" id="phoneNumber" />
+                            <label for="phoneNumber">Phone number</label>
+                            <span class="helper-text left"></span>
+                        </div>
+                        <div class="input-field mb-3">
+                            <button class="btn btn-large red center waves-effect waves-light" id="deliveryBtn">SEND</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="modal-footer"><a class="modal-action modal-close btn-flat">Modify cart</a></div>
+        </div>  
+    <!-- Modal for receipt -->
 
         <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
         <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>

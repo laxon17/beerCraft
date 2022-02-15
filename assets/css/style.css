@@ -37,6 +37,10 @@ html .mb {
   margin-bottom: 60px;
 }
 
+html .mb-3 {
+  margin-bottom: 3rem !important;
+}
+
 html .mt {
   margin-top: 30px;
 }
@@ -69,8 +73,29 @@ html .pl-1 {
   padding-left: 1rem !important;
 }
 
+html .pr-1 {
+  padding-right: 1rem !important;
+}
+
+html .pr-2 {
+  padding-right: 2rem !important;
+}
+
+html .pr-3 {
+  padding-right: 3rem !important;
+}
+
 html .small-text {
   font-size: .8rem !important;
+}
+
+html .bd-r {
+  border-right: 1px solid #000;
+}
+
+html .n-u {
+  border: 0 !important;
+  outline: 0;
 }
 
 html .orange.lighten-6 {
@@ -83,6 +108,40 @@ html .orange.lighten-7 {
 
 html body {
   overflow-x: hidden;
+}
+
+html body li.options {
+  position: relative;
+}
+
+html body li.options .quantity-info-status {
+  font-size: .75rem;
+  position: absolute;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+  place-content: center;
+  top: 30px;
+}
+
+html body .fail {
+  border-bottom-color: red !important;
+}
+
+html body .fail + label {
+  color: red !important;
+}
+
+html body .pass {
+  border-bottom-color: teal !important;
+}
+
+html body .pass + label {
+  color: teal !important;
 }
 
 html body .loader {
@@ -112,8 +171,12 @@ html body .loader img {
   width: 25%;
 }
 
-html body p {
+html body p, html body .size-1 {
   font-size: 1.25em;
+}
+
+html body .scape {
+  width: 100% !important;
 }
 
 html body .cross-section {
@@ -267,14 +330,6 @@ html body main .textarea:focus {
 
 html body main .textarea:focus + label {
   color: #ffb223;
-}
-
-html body main .fail {
-  border-bottom-color: red !important;
-}
-
-html body main .pass {
-  border-bottom-color: teal !important;
 }
 
 html body main label {

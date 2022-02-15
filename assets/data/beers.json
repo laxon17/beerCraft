@@ -559,7 +559,7 @@
     },
     {
         "id": 32,
-        "beerName": "Flying Dogma",
+        "beerName": "Fly Dog",
         "brewery": 3,
         "price": 3,
         "alcoholPercentage": {
@@ -595,7 +595,7 @@
     },
     {
         "id": 34,
-        "beerName": "Hollow Pumpkin",
+        "beerName": "Pumpkin",
         "brewery": 3,
         "price": 2.5,
         "alcoholPercentage": {
