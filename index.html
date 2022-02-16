@@ -14,8 +14,8 @@
         <meta name="author" content="Lazar Lalović, 62/20" />
         <meta name="description" content="Welcome to worldCraft, the biggest Craft Beer community!" />
         <meta name="keywords" content="craft beer, ipa craft, apa craft, best beer, sol beer, stout beer, brew, brewery, cream ale, blonde ale" />
-        <script src="assets/js/main.js" defer></script>
-        <script src="https://kit.fontawesome.com/51a8d0c9c6.js" crossorigin="anonymous"></script>
+        <script type="text/javascript" src="assets/js/main.js" defer></script>
+        <script type="text/javascript" src="https://kit.fontawesome.com/51a8d0c9c6.js" crossorigin="anonymous"></script>
         <title>worldCraft | Welcome</title>
     </head>
 
@@ -36,7 +36,7 @@
                             <i class="material-icons white-text">menu</i>
                         </a>
                         <ul id="visible-links" class="left hide-on-med-and-down navLinks">  
-                            <!-- Content inserted from navigation.json -->
+                            <!-- Content injected through JavaScript -->
                         </ul>
                         <ul class="right">  
                             <li class="options">
@@ -55,7 +55,7 @@
 
         <!-- Hidden navigation menu -->
             <ul class="sidenav sideNavCollapsed orange lighten-7" id="mobile-nav">
-                <!-- Content inserted from navigation.json -->
+                <!-- Content injected through JavaScript -->
             </ul>
         <!-- End of hidden navigation menu -->
 
@@ -65,7 +65,7 @@
                     <h4 class="center">Favorites</h4>
                     <li><div class="divider"></div></li>
                     <ul id="favorites-container" class="pl-1 pt-1">
-                        
+                        <!-- Content injected through JavaScript -->
                     </ul>
                     <li class="hide">
                         <a class="btn btn-medium orange" id="removeAllFavorites">Remove all</a>
@@ -78,15 +78,15 @@
                     <h4 class="center">Cart<span id="cartTotal" class="flow-text"></span></h4>
                     <li><div class="divider"></div></li>
                     <ul id="cart-container" class="pl-1 pt-1">
-                        
+                        <!-- Content injected through JavaScript -->
                     </ul>
                     <li class="hide">
                         <div class="row">
                             <div class="col s6">
-                                <a class="btn btn-medium orange modal-trigger" id="checkout" href="#modal1">Checkout</a>
+                                <a class="btn btn-medium orange modal-trigger" id="checkout" href="#modal1"><i class="material-icons white-text small left">shopping_cart</i>Buy</a>
                             </div>
                             <div class="col s6">
-                                <a class="btn btn-medium orange" id="clearCart">Clear cart</a>
+                                <a class="btn btn-medium orange" id="clearCart"><i class="material-icons white-text small left">close</i>Clear</a>
                             </div>
                         </div>
                     </li>
@@ -100,7 +100,7 @@
         <main>
             <div class="parallax-container">
                 <div class="parallax">
-                    <img src="./assets/img/brewery.jpg">
+                    <img src="./assets/img/brewery.jpg" alt="Craft beers in glass" />
                 </div>
                 <div class="container" id="intro">
                     <h1 class="white-text intro-text">Welcome to worldCraft</h1>
@@ -125,7 +125,7 @@
                 </section>
                 <div class="row">
                     <div class="col l5 offset-l1" data-aos="fade-up-right">
-                        <img class="responsive-img" src="assets/img/macleod-beer.jpg" alt="Glass of Beer" />
+                        <img class="responsive-img" src="./assets/img/macleod-beer.jpg" alt="Glass of Beer" />
                     </div>
                     <div class="col l5 pt" data-aos="fade-up-left">
                         <blockquote class="flow-text">World's most famous crafts</blockquote>
@@ -150,12 +150,12 @@
                         </p>
                     </div>
                     <div class="col l5" data-aos="fade-up-left">
-                        <img class="responsive-img" src="assets/img/pub.jpg" alt="Glass of Beer" />
+                        <img class="responsive-img" src="./assets/img/pub.jpg" alt="Glass of Beer" />
                     </div>  
                 </div>
                 <div class="row">
                     <div class="col l5 offset-l1" data-aos="fade-up-right">
-                        <img class="responsive-img" src="assets/img/employee.jpg" alt="Glass of Beer" />
+                        <img class="responsive-img" src="./assets/img/employee.jpg" alt="Glass of Beer" />
                     </div>
                     <div class="col l5 pt" data-aos="fade-up-left">
                         <blockquote class="flow-text">Cheerful personnel</blockquote>
@@ -168,9 +168,9 @@
                 </div>
             </div>
             <div class="parallax-container">
-                <div class="parallax"><img src="./assets/img/glass-of-beer.jpg"></div>
+                <div class="parallax"><img src="./assets/img/glass-of-beer.jpg" alt="Guy pouring beer" /></div>
                 <div class="row">
-                    <div class="col s8 m4 l4 offset-s2 offset-m4 push-l2 center"><img class="responsive-img" src="./assets/img/beers.png" alt="Beers" data-aos="fade-up-right"></div>
+                    <div class="col s8 m4 l4 offset-s2 offset-m4 push-l2 center"><img class="responsive-img" src="./assets/img/beers.png" alt="Beers" data-aos="fade-up-right" /></div>
                     <div class="col s12 m4 l4 offset-m4 push-l2 pt center" data-aos="fade-up-left">
                         <p class="flow-text white-text">Can't visit us?</p>
                         <br />
@@ -178,47 +178,13 @@
                     </div>
                 </div>
             </div>
+
         </main>
     <!-- End of main content of page -->
 
-    <!-- Footer of the page -->
-        <footer class="page-footer grey darken-3">
-            <div class="container">
-                <div class="row">
-                    <div class="col m3 l3 s12 offset-m1 offset-l1 center-on-small-only">
-                        <h5 class="white-text">Useful links</h5>
-                        <ul>
-                            <li><a class="white-text" href="./about.html#definition">What is craft beer?</a></li>
-                            <li><a class="white-text" href="./about.html#brewing">How is craft beer brewed?</a></li>
-                            <li><a class="white-text" href="./about.html#location">Brewery near me?</a></li>
-                            <li><a class="white-text" href="./about.html#contact">Write us a message.</a></li>
-                        </ul>
-                    </div>
-                    <div class="col m3 l3 s12 offset-m1 offset-l1 center-on-small-only">
-                        <h5 class="white-text">Contact us</h5>
-                        <ul id="contact-methods">
-                            <li><a class="white-text" href="./assets/settings/feed.rss">RSS News</a></li>
-                            <li>Mail: lazarlalovic@gmail.com</li>
-                            <li>Phone: 064 / 923 82 52</li>
-                            <li>Street: Zdravka Celara 16</li>
-                        </ul>
-                    </div>
-                    <div class="col m3 l3 s12 offset-m1 offset-l1 center-on-small-only">
-                        <h5 class="white-text">Site assets</h5>
-                        <ul>
-                            <li><a class="white-text" href="./documentation.pdf">Documentation</a></li>
-                            <li><a class="white-text" href="./assets/settings/sitemap.xml">Sitemap</a></li>
-                            <li><a class="white-text" href="./assets/settings/feed.rss">RSS</a></li>
-                            <li><a class="white-text" href="./assets/js/main.js">main.js</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>  
-            <div class="footer-copyright grey darken-4">
-                <div class="container center-align">
-                    Copyright &copy; Lazar Lalovic 2022. All Rights Reserved.
-                </div>
-            </div>
+    <!-- Footer of the page -->    
+        <footer class="page-footer grey darken-3" id="pageFooter">
+            <!-- Content injected through JavaScript -->
         </footer>
     <!-- End of page footer -->
 
@@ -232,61 +198,12 @@
 
     <!-- Modal for receipt -->
         <div id="modal1" class="modal modal-fixed-footer">
-            <div class="modal-content">
-                <h4>Your cart items:</h4>
-                <div class="divider"></div>
-                <div class="col s12 l6">
-                    <table class="responsive-table striped">
-                        <thead>
-                            <td>Id</td>
-                            <td>Name</td>
-                            <td>Quantity</td>
-                            <td>Price &euro;: <small>&#40;per unit&#41;</small></td>
-                            <td>Total &euro;</td>
-                        </thead>
-                        <tbody id="receipt-items">
-                            
-                        </tbody>
-                    </table>
-                    <div class="right size-1 pt-2 pr-3">
-                        Receipt = &euro; <u><span id="totalReceipt">0.0</span></u>
-                    </div>
-                </div>
-                <div class="col s12 l4 offset-l1 pt-3">
-                    <h5>Delivery info</h5>
-                    <form class="pt-3" id="deliveryForm">
-                        <div class="input-field mb-3">
-                            <input class="black-text quantity" placeholder="e.g. John Doe" type="text" name="Full name" id="customerName" />
-                            <label for="customerName">Full Name</label>
-                            <span class="helper-text left"></span>
-                        </div>
-                        <div class="input-field mb-3">
-                            <input class="black-text quantity" placeholder="e.g. Zdravka Celara 16" type="text" name="Address" id="address" />
-                            <label for="address">Address</label>
-                            <span class="helper-text left"></span>
-                        </div>
-                        <div class="input-field mb-3">
-                            <input class="black-text quantity" placeholder="e.g. xxxxx" type="number" name="Postal code" id="postalCode" />
-                            <label for="postalCode">Postal code</label>
-                            <span class="helper-text left"></span>
-                        </div>
-                        <div class="input-field mb-3">
-                            <input class="black-text quantity" placeholder="e.g. +xxx xx xxx xx xx" type="text" name="Phone number" id="phoneNumber" />
-                            <label for="phoneNumber">Phone number</label>
-                            <span class="helper-text left"></span>
-                        </div>
-                        <div class="input-field mb-3">
-                            <button class="btn btn-large red center waves-effect waves-light" id="deliveryBtn">SEND</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-            <div class="modal-footer"><a class="modal-action modal-close btn-flat">Modify cart</a></div>
+            <!-- Content injected through JavaScript -->
         </div>  
     <!-- Modal for receipt -->
 
-        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-        <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+        <script type="text/javascript" src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+        <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     </body>
 </html>

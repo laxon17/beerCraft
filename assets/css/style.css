@@ -110,6 +110,21 @@ html body {
   overflow-x: hidden;
 }
 
+html body nav img {
+  width: 25%;
+  -webkit-transform: translate(-50%, -10%) !important;
+          transform: translate(-50%, -10%) !important;
+}
+
+html body nav li a {
+  text-transform: uppercase;
+}
+
+html body nav li i {
+  margin-right: 10px;
+  cursor: pointer;
+}
+
 html body li.options {
   position: relative;
 }
@@ -201,21 +216,6 @@ html body blockquote.exceptionquote {
   border-left-color: transparent !important;
   border-right: 5px solid orange;
   padding-right: 1rem;
-}
-
-html body nav img {
-  width: 25%;
-  -webkit-transform: translate(-50%, -10%) !important;
-          transform: translate(-50%, -10%) !important;
-}
-
-html body nav li a {
-  text-transform: uppercase;
-}
-
-html body nav li i {
-  margin-right: 10px;
-  cursor: pointer;
 }
 
 html body main .section2 {

@@ -22,6 +22,7 @@
 // END OF LOAD ALL JSONS IN LOCAL STORAGE
 
 // LOADING OF ESSENTIALS
+    createModal()
     if(window.location.pathname === '/worldCraft/shop.html') shopPage()
     if(window.location.pathname === '/worldCraft/about.html') contactValidation()
 // END OF LOADING ESSENTIALS
@@ -882,6 +883,7 @@
 // MATERIALIZE & JQUERY COMPONENTS
     $(document).ready(() => {
         loadNavigation()
+        pageFooter()
         scrollToTopBtn()
         AOS.init()
         $('.modal').modal()
@@ -893,3 +895,110 @@
         $('select').formSelect()
     })
 // END OF MATERIALIZE & JQUERY COMPONENTS
+
+// AMATEUR COMPONENTS 
+
+    function pageFooter() {
+        const footerContainer = document.getElementById('pageFooter')
+
+        const footerContent = `
+            <div class="container">
+                <div class="row">
+                    <div class="col m3 l3 s12 offset-m1 offset-l1 center-on-small-only">
+                        <h5 class="white-text">Useful links</h5>
+                        <ul>
+                            <li><a target="_blank" class="white-text" href="./about.html#definition">What is craft beer?</a></li>
+                            <li><a target="_blank" class="white-text" href="./about.html#brewing">How is craft beer brewed?</a></li>
+                            <li><a target="_blank" class="white-text" href="./about.html#location">Brewery near me?</a></li>
+                            <li><a target="_blank" class="white-text" href="./about.html#contact">Write us a message.</a></li>
+                        </ul>
+                    </div>
+                    <div class="col m3 l3 s12 offset-m1 offset-l1 center-on-small-only">
+                        <h5 class="white-text">Contact us</h5>
+                        <ul id="contact-methods">
+                            <li><a class="white-text" href="./assets/settings/feed.rss"><u>RSS Subscription</u></a></li>
+                            <li>Mail: lazarlalovic@gmail.com</li>
+                            <li>Phone: 064 / 923 82 52</li>
+                            <li>Street: Zdravka Celara 16</li>
+                        </ul>
+                    </div>
+                    <div class="col m3 l3 s12 offset-m1 offset-l1 center-on-small-only">
+                        <h5 class="white-text">Site assets</h5>
+                        <ul class="pt-1">
+                            <li><a target="_blank" class="white-text" href="./documentation.pdf">Documentation</a></li>
+                            <li><a target="_blank" class="white-text" href="./assets/settings/sitemap.xml">Sitemap</a></li>
+                            <li><a target="_blank" class="white-text" href="./assets/js/main.js">main.js</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>  
+            <div class="footer-copyright grey darken-4">
+                <div class="container center-align">
+                    Copyright &copy; Lazar Lalovic 2022. All Rights Reserved.
+                </div>
+            </div>
+        `
+
+        footerContainer.innerHTML = footerContent
+    }
+
+    function  createModal() {
+        const modalContainer = document.getElementById('modal1')
+
+        const modalContent = `
+            <div class="modal-content">
+                <h4>Your cart items:</h4>
+                <div class="divider"></div>
+                <div class="col s12 l6">
+                    <table class="responsive-table striped">
+                        <thead>
+                            <td>Id</td>
+                            <td>Name</td>
+                            <td>Quantity</td>
+                            <td>Price &euro;: <small>&#40;per unit&#41;</small></td>
+                            <td>Total &euro;</td>
+                        </thead>
+                        <tbody id="receipt-items">
+                            
+                        </tbody>
+                    </table>
+                    <div class="right size-1 pt-2 pr-3">
+                        Receipt = &euro; <u><span id="totalReceipt">0.0</span></u>
+                    </div>
+                </div>
+                <div class="col s12 l4 offset-l1 pt-3">
+                    <h5>Delivery info</h5>
+                    <form class="pt-3" id="deliveryForm">
+                        <div class="input-field mb-3">
+                            <input class="black-text quantity" placeholder="e.g. John Doe" type="text" name="Full name" id="customerName" />
+                            <label for="customerName">Full Name</label>
+                            <span class="helper-text left"></span>
+                        </div>
+                        <div class="input-field mb-3">
+                            <input class="black-text quantity" placeholder="e.g. Zdravka Celara 16" type="text" name="Address" id="address" />
+                            <label for="address">Address</label>
+                            <span class="helper-text left"></span>
+                        </div>
+                        <div class="input-field mb-3">
+                            <input class="black-text quantity" placeholder="e.g. xxxxx" type="number" name="Postal code" id="postalCode" />
+                            <label for="postalCode">Postal code</label>
+                            <span class="helper-text left"></span>
+                        </div>
+                        <div class="input-field mb-3">
+                            <input class="black-text quantity" placeholder="e.g. +xxx xx xxx xx xx" type="text" name="Phone number" id="phoneNumber" />
+                            <label for="phoneNumber">Phone number</label>
+                            <span class="helper-text left"></span>
+                        </div>
+                        <div class="input-field mb-3">
+                            <button class="btn btn-large red center waves-effect waves-light" id="deliveryBtn">SEND</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="modal-footer"><a class="modal-action modal-close btn-flat">Modify cart</a></div>
+        `
+
+        modalContainer.innerHTML = modalContent
+    }
+
+// END OF AMATEUR COMPONENTS

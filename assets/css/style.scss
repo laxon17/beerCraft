@@ -19,6 +19,8 @@
     background-color: orange;
 }
 
+// CUSTOM CLASSES FOR EASIER INTERACTION WITH MATERIALIZE FRAMEWORK
+
 html {
     scroll-behavior: smooth;
     overflow-x: hidden;
@@ -67,7 +69,7 @@ html {
     .small-text {
         font-size: .8rem !important;
     }
-    .bd-r {
+    .bd-r { // border right
         border-right: 1px solid #000;
     }
     .n-u { // no underline
@@ -83,6 +85,22 @@ html {
         }
     }
     body {
+        overflow-x: hidden;
+        nav {
+            img {   
+                width: 25%;
+                transform: translate(-50%,-10%) !important;
+            }
+            li {
+                a {
+                    text-transform: uppercase;
+                }
+                i {
+                    margin-right: 10px;
+                    cursor: pointer;
+                }
+            }
+        }
         li {
             &.options {
                 position: relative;
@@ -100,7 +118,6 @@ html {
                 }
             }
         }
-        overflow-x: hidden;
         .fail {
             border-bottom-color: red !important;
             &+label {
@@ -148,21 +165,6 @@ html {
                 border-left-color: transparent !important;
                 border-right: 5px solid orange;
                 padding-right: 1rem;
-            }
-        }
-        nav {
-            img {   
-                width: 25%;
-                transform: translate(-50%,-10%) !important;
-            }
-            li {
-                a {
-                    text-transform: uppercase;
-                }
-                i {
-                    margin-right: 10px;
-                    cursor: pointer;
-                }
             }
         }
         main {
